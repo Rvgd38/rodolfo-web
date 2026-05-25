@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodolfo González | Entrenamiento Basado en la Ciencia</title>
+    <!-- Integración de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Arquitectura CSS y Sistema de Diseño */
+        :root {
+            --bg-main: #121212;
+            --bg-card: #1E1E1E;
+            --neon-green: #39FF14;
+            --text-main: #E0E0E0;
+            --text-muted: #808080;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Rajdhani', sans-serif;
+            color: #FFFFFF;
+            margin-top: 0;
+        }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Navegación */
+        header { padding: 25px 0; border-bottom: 1px solid #222; background: rgba(18, 18, 18, 0.95); position: sticky; top: 0; z-index: 100;}
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Rajdhani', sans-serif; font-size: 28px; font-weight: 700; color: #fff; letter-spacing: 1px;}
+        .logo span { color: var(--neon-green); }
+        
+        /* Botones (CTAs) */
+        .btn-neon {
+            background-color: var(--neon-green);
+            color: #000;
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-weight: 700;
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 15px;
+            border: 2px solid var(--neon-green);
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+        .btn-neon:hover {
+            background-color: transparent;
+            color: var(--neon-green);
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
+        }
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 2px solid var(--neon-green);
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-weight: 700;
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+        .btn-outline:hover {
+            background-color: var(--neon-green);
+            color: #000;
+        }
+        
+        /* Estructura de Secciones */
+        section { padding: 100px 0; }
+        .hero { text-align: center; padding: 120px 20px; }
+        .hero h1 { font-size: 52px; margin-bottom: 24px; line-height: 1.1; }
+        .hero p { font-size: 18px; color: var(--text-muted); max-width: 750px; margin: 0 auto 40px auto; }
+        
+        /* Sistema de Cuadrículas (Tarjetas) */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { 
+            background-color: var(--bg-card); 
+            padding: 40px 30px; 
+            border-radius: 8px; 
+            border-top: 3px solid var(--neon-green); 
+            transition: transform 0.3s ease;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { color: var(--neon-green); font-size: 26px; }
+        .price { font-size: 38px; font-family: 'Rajdhani', sans-serif; font-weight: 700; margin-bottom: 20px; color: #fff;}
+        .price span { font-size: 16px; color: var(--text-muted); font-weight: 400;}
+        .card ul { padding-left: 20px; color: var(--text-muted); font-size: 15px;}
+        .card ul li { margin-bottom: 12px; }
+        
+        /* Pie de página */
+        .contact { text-align: center; background-color: var(--bg-card); border-top: 1px solid #222; padding: 80px 20px; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 38px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">RG <span>COACHING</span></div>
+        </div>
+    </header>
+
+    <section class="hero container">
+        <h1>Ciencia, Biomecánica e IA<br>Aplicadas a tu Evolución Física</h1>
+        <p>Metodología pedagógica con 18 años de experiencia deportiva en el fitness. Sin rutinas genéricas. Sin adivinanzas. Solo resultados matemáticamente predecibles.</p>
+        <a href="#contacto" class="btn-neon">EVALÚA TU CASO CON MI IA AHORA</a>
+    </section>
+
+    <section class="container" style="background-color: var(--bg-card); border-radius: 12px; padding: 60px 40px; text-align: center;">
+        <h2 style="font-size: 32px;">¿Por qué el 90% fracasa? <span style="color: var(--neon-green);">Falta de Educación Biomecánica.</span></h2>
+        <p style="color: var(--text-muted); max-width: 800px; margin: 0 auto 35px auto; font-size: 17px;">
+            No eres una plantilla. Tu estructura ósea, historial de lesiones y metabolismo requieren una intervención precisa. Combinando mis 18 años de experiencia, mi Licenciatura en Educación y las certificaciones de CYBEX, audito tus movimientos para garantizar eficiencia absoluta.
+        </p>
+        <a href="#servicios" class="btn-outline">CONOCE MIS PLANES DE INTERVENCIÓN</a>
+    </section>
+
+    <section id="servicios" class="container">
+        <h2 style="text-align: center; font-size: 40px; margin-bottom: 60px;">Programas de Intervención Metabólica</h2>
+        <div class="grid">
+            <!-- Nivel 1 -->
+            <div class="card">
+                <h3>NIVEL 1</h3>
+                <div class="price">$50 <span>USDT / mes</span></div>
+                <p style="color: #fff; font-weight: 600;">Plan de Entrenamiento Estándar</p>
+                <ul>
+                    <li>Planificación de hipertrofia o resistencia.</li>
+                    <li>Selección de ejercicios con enfoque en seguridad articular.</li>
+                </ul>
+                <!-- REEMPLAZAR EL # CON TU LINK DE BINANCE PAY DE 50$ -->
+                <a href="#" class="btn-neon" style="width: 100%; text-align: center; box-sizing: border-box; margin-top: 30px;">INICIAR NIVEL 1</a>
+            </div>
+            
+            <!-- Nivel 2 -->
+            <div class="card" style="border: 1px solid var(--neon-green); box-shadow: 0 0 20px rgba(57,255,20,0.1);">
+                <h3>NIVEL 2</h3>
+                <div class="price">$80 <span>USDT / mes</span></div>
+                <p style="color: #fff; font-weight: 600;">Plan Dual de Transformación</p>
+                <ul>
+                    <li>Todo lo del Nivel 1.</li>
+                    <li>Diseño de plan alimenticio milimétrico (macros y micros).</li>
+                    <li>Ajustes basados en respuesta metabólica.</li>
+                </ul>
+                <!-- REEMPLAZAR EL # CON TU LINK DE BINANCE PAY DE 80$ -->
+                <a href="#" class="btn-neon" style="width: 100%; text-align: center; box-sizing: border-box; margin-top: 30px;">INICIAR NIVEL 2</a>
+            </div>
+            
+            <!-- Nivel 3 -->
+            <div class="card">
+                <h3>NIVEL 3</h3>
+                <div class="price">$150 <span>USDT / mes</span></div>
+                <p style="color: #fff; font-weight: 600;">Plan Élite Biomecánico</p>
+                <ul>
+                    <li>Todo lo del Nivel 2.</li>
+                    <li>Auditoría biomecánica vía video (cero riesgo de lesión).</li>
+                    <li>Soporte prioritario y ajustes dinámicos continuos.</li>
+                </ul>
+                <!-- REEMPLAZAR EL # CON TU LINK DE BINANCE PAY DE 150$ -->
+                <a href="#" class="btn-neon" style="width: 100%; text-align: center; box-sizing: border-box; margin-top: 30px;">INICIAR NIVEL 3</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 style="text-align: center; font-size: 36px; margin-bottom: 50px;">Respaldado por la Ciencia y la Academia</h2>
+        <div class="grid">
+            <div class="card" style="border-top-color: #444; padding: 25px;">
+                <h4 style="font-size: 18px;">🎓 Licenciatura en Educación</h4>
+                <p style="color: var(--text-muted); font-size: 14px; margin: 0;">Base pedagógica y didáctica para asegurar tu aprendizaje.</p>
+            </div>
+            <div class="card" style="border-top-color: #444; padding: 25px;">
+                <h4 style="font-size: 18px;">🧬 Especialista en Biomecánica</h4>
+                <p style="color: var(--text-muted); font-size: 14px; margin: 0;">Entrenamiento de Resistencia. Certificación Internacional CYBEX.</p>
+            </div>
+            <div class="card" style="border-top-color: #444; padding: 25px;">
+                <h4 style="font-size: 18px;">🥇 ISSA Certified</h4>
+                <p style="color: var(--text-muted); font-size: 14px; margin: 0;">Personal Trainer & Nutritionist. Certificados issa.</p>
+            </div>
+            <div class="card" style="border-top-color: #444; padding: 25px;">
+                <h4 style="font-size: 18px;">🏥 Prescripción del Ejercicio</h4>
+                <p style="color: var(--text-muted); font-size: 14px; margin: 0;">Patologías. Instituto Panamericano de Educación Física / LUZ.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 style="font-size: 38px;">Da el Primer Paso hacia tu Versión Élite</h2>
+            <p style="color: var(--text-muted); margin: 0 auto 35px auto; max-width: 600px; font-size: 18px;">
+                Interactúa con <strong>RG TOTAL MASTER CONSULTANT</strong>, mi Inteligencia Artificial entrenada con mis protocolos científicos, para una evaluación inmediata.
+            </p>
+            <!-- REEMPLAZAR EL # CON EL ENLACE PÚBLICO DE TU IA QUE HAREMOS LUEGO -->
+            <a href="#" class="btn-neon">INICIAR CHAT DE DIAGNÓSTICO (IA)</a>
+        </div>
+    </section>
+
+</body>
+</html>
