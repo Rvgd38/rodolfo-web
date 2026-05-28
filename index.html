@@ -49,10 +49,10 @@
         .hero-text h1 span { color: var(--neon-green); }
         .hero-text p { font-size: 19px; color: var(--text-gray); margin-bottom: 45px; max-width: 550px; }
         
-        /* NUEVO MARCO DE FOTOS PREMIUM */
+        /* MARCO DE FOTOS PREMIUM */
         .photo-frame { flex: 1; position: relative; display: flex; justify-content: center; }
         .photo-frame img { 
-            display: block; width: 100%; max-width: 500px; height: 600px; object-fit: cover; /* Mantiene proporciones perfectas */
+            display: block; width: 100%; max-width: 500px; height: 600px; object-fit: cover; 
             border-radius: 12px; border: 1px solid rgba(57, 255, 20, 0.4);
             box-shadow: 0 20px 40px rgba(0,0,0,0.8), 0 0 20px rgba(57, 255, 20, 0.1);
             transition: transform 0.5s ease;
@@ -66,7 +66,7 @@
         .card:hover { transform: translateY(-10px); }
         .card h3 { color: var(--neon-green); font-size: 24px; margin-top: 0;}
 
-        /* REPRODUCTOR DE VIDEO NATIVO (LIMPIO) */
+        /* REPRODUCTOR DE VIDEO NATIVO */
         .video-section { text-align: center; background: #080808; padding: 100px 20px; }
         .native-video-player {
             max-width: 400px; width: 100%; margin: 40px auto 0 auto;
@@ -86,14 +86,12 @@
 </head>
 <body>
 
-    <!-- NAVEGACIÓN -->
     <header>
         <div class="container nav-content">
             <div class="logo">RG<span>COACHING</span></div>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
     <section class="hero container">
         <div class="hero-text">
             <h1>Evolución Física a través de la <span>Ciencia y Biomecánica</span></h1>
@@ -101,15 +99,15 @@
             <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20solicitar%20una%20entrevista%20de%20diagn%C3%B3stico" target="_blank" class="btn-neon">SOLICITAR ENTREVISTA DE DIAGNÓSTICO</a>
         </div>
         <div class="photo-frame">
-            <!-- SOPORTA JPG Y JPEG -->
-            <img src="foto1.jpeg" onerror="this.src='foto1.jpg'" alt="Coach Rodolfo Evaluando">
+            <!-- RUTAS CORREGIDAS AL SERVIDOR -->
+            <img src="foto1.jpg.jpeg" alt="Coach Rodolfo Evaluando">
         </div>
     </section>
 
-    <!-- PROBLEMA Y SOLUCIÓN -->
     <section class="container grid-2">
         <div class="photo-frame">
-            <img src="foto2.jpeg" onerror="this.src='foto2.jpg'" alt="Biomecánica Aplicada">
+            <!-- RUTAS CORREGIDAS AL SERVIDOR -->
+            <img src="foto2.jpg.jpeg" alt="Biomecánica Aplicada">
         </div>
         <div style="text-align: left;">
             <h2 style="font-size: 42px; line-height: 1.1;">¿Por qué las rutinas genéricas <span style="color:var(--neon-green);">fallan</span>?</h2>
@@ -122,7 +120,6 @@
         </div>
     </section>
 
-    <!-- SOBRE MÍ / TU COACH -->
     <section class="container grid-2">
         <div style="text-align: left;">
             <h2 style="font-size: 38px;">Lic. Rodolfo González</h2>
@@ -134,28 +131,26 @@
             </ul>
         </div>
         <div class="photo-frame">
-            <img src="foto3.jpeg" onerror="this.src='foto3.jpg'" alt="Coach Rodolfo en Máquina">
+            <!-- RUTAS CORREGIDAS AL SERVIDOR -->
+            <img src="foto3.jpg.jpeg" alt="Coach Rodolfo en Máquina">
         </div>
     </section>
 
-    <!-- ZONA DINÁMICA DE VIDEOS (REPRODUCTOR NATIVO LIMPIO) -->
     <section class="video-section">
         <div class="container">
             <h2 style="font-size: 38px;">Auditoría en Movimiento</h2>
-            <p style="color: var(--text-gray); font-size: 18px;">Ejecución técnica y consejos de optimización (Sin distracciones externas).</p>
+            <p style="color: var(--text-gray); font-size: 18px;">Ejecución técnica y consejos de optimización.</p>
             
             <div class="native-video-player">
-                <!-- REPRODUCTOR HTML5: Solo el video, sin logos de Instagram -->
+                <!-- RUTA CORREGIDA AL SERVIDOR -->
                 <video controls controlsList="nodownload" playsinline>
-                    <source src="video.mp4" type="video/mp4">
+                    <source src="video.mp4.mp4" type="video/mp4">
                     Tu navegador no soporta el reproductor de video.
                 </video>
             </div>
-
         </div>
     </section>
 
-    <!-- CONTACTO / CIERRE -->
     <section style="text-align: center; border-bottom: none; padding-bottom: 80px; padding-top: 80px;">
         <div class="container">
             <h2 style="font-size: 45px; margin-bottom: 10px;">Inicia tu Transformación Hoy</h2>
