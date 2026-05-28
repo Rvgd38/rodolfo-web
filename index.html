@@ -12,10 +12,10 @@
         /* CORE DESIGN SYSTEM */
         :root {
             --bg-dark: #000000;
-            --bg-panel: #1E1E1E;
+            --bg-panel: #111111;
             --neon-green: #39FF14;
             --text-light: #E0E0E0;
-            --text-gray: #808080;
+            --text-gray: #888888;
         }
         
         * { box-sizing: border-box; }
@@ -26,65 +26,61 @@
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
         /* NAVBAR */
-        header { background: rgba(0, 0, 0, 0.9); border-bottom: 1px solid var(--bg-panel); position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(5px); }
+        header { background: rgba(0, 0, 0, 0.95); border-bottom: 1px solid #222; position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
         .nav-content { display: flex; justify-content: space-between; align-items: center; height: 80px; }
         .logo { font-family: 'Rajdhani', sans-serif; font-size: 32px; font-weight: 700; color: #FFF; letter-spacing: 2px;}
         .logo span { color: var(--neon-green); }
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a { font-size: 14px; font-weight: 600; text-transform: uppercase; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--neon-green); }
 
         /* BOTONES CTAs */
         .btn-neon {
-            background-color: var(--neon-green); color: #000; padding: 16px 32px; font-weight: 700; display: inline-block;
-            text-transform: uppercase; border: 2px solid var(--neon-green); cursor: pointer; transition: all 0.3s ease;
-            box-shadow: 0 0 10px rgba(57, 255, 20, 0.2); font-family: 'Inter', sans-serif; letter-spacing: 1px;
+            background-color: var(--neon-green); color: #000; padding: 18px 36px; font-weight: 700; display: inline-block;
+            text-transform: uppercase; border: none; border-radius: 4px; cursor: pointer; transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(57, 255, 20, 0.3); font-family: 'Inter', sans-serif; letter-spacing: 1px; font-size: 15px;
         }
-        .btn-neon:hover { background-color: transparent; color: var(--neon-green); box-shadow: 0 0 25px rgba(57, 255, 20, 0.5); }
+        .btn-neon:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(57, 255, 20, 0.6); }
 
         /* SECCIONES */
-        section { padding: 120px 0; border-bottom: 1px solid var(--bg-panel); }
+        section { padding: 120px 0; border-bottom: 1px solid #1a1a1a; }
         
         /* HERO SECTION */
-        .hero { display: flex; align-items: center; justify-content: space-between; gap: 50px; min-height: 100vh; padding-top: 150px; }
+        .hero { display: flex; align-items: center; justify-content: space-between; gap: 60px; min-height: 100vh; padding-top: 150px; }
         .hero-text { flex: 1; }
-        .hero-text h1 { font-size: 55px; line-height: 1.1; margin-bottom: 20px; }
+        .hero-text h1 { font-size: 60px; line-height: 1.1; margin-bottom: 25px; }
         .hero-text h1 span { color: var(--neon-green); }
-        .hero-text p { font-size: 18px; color: var(--text-gray); margin-bottom: 40px; max-width: 500px; }
+        .hero-text p { font-size: 19px; color: var(--text-gray); margin-bottom: 45px; max-width: 550px; }
         
-        /* EFECTO HOLOGRAMA IA */
-        .hologram-wrapper { flex: 1; position: relative; display: flex; justify-content: center; }
-        .hologram-scanner {
-            position: relative; overflow: hidden; border: 2px solid var(--neon-green); box-shadow: 0 0 20px rgba(57,255,20,0.15);
-            max-width: 100%; border-radius: 4px;
+        /* NUEVO MARCO DE FOTOS PREMIUM */
+        .photo-frame { flex: 1; position: relative; display: flex; justify-content: center; }
+        .photo-frame img { 
+            display: block; width: 100%; max-width: 500px; height: 600px; object-fit: cover; /* Mantiene proporciones perfectas */
+            border-radius: 12px; border: 1px solid rgba(57, 255, 20, 0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8), 0 0 20px rgba(57, 255, 20, 0.1);
+            transition: transform 0.5s ease;
         }
-        .hologram-scanner img { display: block; width: 100%; height: auto; filter: contrast(1.1) grayscale(20%); }
-        .hologram-scanner::after {
-            content: ''; position: absolute; top: -10%; left: 0; width: 100%; height: 4px;
-            background: var(--neon-green); box-shadow: 0 0 15px var(--neon-green); opacity: 0.8;
-            animation: scan 4s infinite linear;
-        }
-        @keyframes scan { 0% { top: -10%; } 100% { top: 110%; } }
+        .photo-frame img:hover { transform: scale(1.02); }
 
-        /* REJILLA GEOMÉTRICA (Decoración) */
-        .decor-cross { position: absolute; color: var(--neon-green); font-size: 30px; font-weight: 300; line-height: 1; opacity: 0.5; }
-
-        /* SERVICIOS / PROBLEMA */
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        /* GRID SYSTEM */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
         .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
-        .card { background: var(--bg-panel); padding: 40px; border-left: 3px solid var(--neon-green); transition: transform 0.3s; }
-        .card:hover { transform: translateX(10px); }
+        .card { background: var(--bg-panel); padding: 40px; border-radius: 8px; border-top: 3px solid var(--neon-green); transition: transform 0.3s; }
+        .card:hover { transform: translateY(-10px); }
         .card h3 { color: var(--neon-green); font-size: 24px; margin-top: 0;}
 
-        /* ZONA DE VIDEOS DINÁMICOS */
-        .video-section { text-align: center; background: #0a0a0a; }
-        .video-container { display: flex; justify-content: center; gap: 30px; margin-top: 40px; flex-wrap: wrap; }
+        /* REPRODUCTOR DE VIDEO NATIVO (LIMPIO) */
+        .video-section { text-align: center; background: #080808; padding: 100px 20px; }
+        .native-video-player {
+            max-width: 400px; width: 100%; margin: 40px auto 0 auto;
+            border-radius: 16px; overflow: hidden;
+            border: 2px solid #222; box-shadow: 0 10px 30px rgba(0,0,0,0.9);
+        }
+        .native-video-player video { width: 100%; display: block; background-color: #000; }
         
         /* RESPONSIVE */
         @media (max-width: 900px) {
-            .hero, .grid-2 { flex-direction: column; text-align: center; }
+            .hero, .grid-2 { flex-direction: column; text-align: center; padding-top: 120px; }
+            .hero-text h1 { font-size: 45px; }
             .grid-3 { grid-template-columns: 1fr; }
-            .nav-links { display: none; } /* Menú simplificado en móvil */
+            .photo-frame img { height: 450px; }
         }
     </style>
 </head>
@@ -94,12 +90,6 @@
     <header>
         <div class="container nav-content">
             <div class="logo">RG<span>COACHING</span></div>
-            <nav class="nav-links">
-                <a href="#metodo">Método</a>
-                <a href="#coach">Tu Coach</a>
-                <a href="#servicios">Servicios</a>
-                <a href="#videos">Videos</a>
-            </nav>
         </div>
     </header>
 
@@ -108,90 +98,65 @@
         <div class="hero-text">
             <h1>Evolución Física a través de la <span>Ciencia y Biomecánica</span></h1>
             <p>18 años de experiencia. Sin rutinas genéricas, sin adivinanzas. Diagnóstico clínico-deportivo procesado con protocolos de Inteligencia Artificial.</p>
-            <!-- ENLACE A WHATSAPP CON MENSAJE PREESTABLECIDO -->
             <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20solicitar%20una%20entrevista%20de%20diagn%C3%B3stico" target="_blank" class="btn-neon">SOLICITAR ENTREVISTA DE DIAGNÓSTICO</a>
         </div>
-        <div class="hologram-wrapper">
-            <div class="decor-cross" style="top: -20px; left: -20px;">+</div>
-            <div class="decor-cross" style="bottom: -20px; right: -20px;">+</div>
-            <!-- IMAGEN 1: FOTO CON MANCUERNAS (STANDING) -->
-            <div class="hologram-scanner">
-                <img src="foto1.jpg" alt="Coach Rodolfo Evaluando" onerror="this.src='https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=800&auto=format&fit=crop';">
-            </div>
+        <div class="photo-frame">
+            <!-- SOPORTA JPG Y JPEG -->
+            <img src="foto1.jpeg" onerror="this.src='foto1.jpg'" alt="Coach Rodolfo Evaluando">
         </div>
     </section>
 
     <!-- PROBLEMA Y SOLUCIÓN -->
-    <section id="metodo" class="container grid-2">
-        <div class="hologram-wrapper">
-            <!-- IMAGEN 2: FOTO FLEXIONES/PUSHUPS -->
-            <div class="hologram-scanner">
-                <img src="foto2.jpg" alt="Biomecánica Aplicada" onerror="this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop';">
-            </div>
+    <section class="container grid-2">
+        <div class="photo-frame">
+            <img src="foto2.jpeg" onerror="this.src='foto2.jpg'" alt="Biomecánica Aplicada">
         </div>
-        <div>
-            <h2 style="font-size: 40px; line-height: 1.1;">¿Por qué las rutinas genéricas <span style="color:var(--neon-green);">fallan</span>?</h2>
-            <p style="color: var(--text-gray); font-size: 17px;">
+        <div style="text-align: left;">
+            <h2 style="font-size: 42px; line-height: 1.1;">¿Por qué las rutinas genéricas <span style="color:var(--neon-green);">fallan</span>?</h2>
+            <p style="color: var(--text-gray); font-size: 18px;">
                 Copiar tendencias de internet destruye articulaciones y estanca tu metabolismo. Tu estructura ósea, historial de lesiones y objetivos requieren una intervención clínica de precisión. 
             </p>
-            <p style="color: var(--text-gray); font-size: 17px;">
+            <p style="color: var(--text-gray); font-size: 18px;">
                 Aplicando el método de <strong>Entrevista Motivacional y Triaje Biomecánico</strong>, identificamos las palancas exactas de tu cuerpo. Esta data es procesada por mi consultor IA privado para estructurar un plan matemáticamente perfecto.
             </p>
         </div>
     </section>
 
     <!-- SOBRE MÍ / TU COACH -->
-    <section id="coach" class="container grid-2">
-        <div>
-            <h2>Lic. Rodolfo González</h2>
-            <h3 style="color: var(--text-gray); margin-top: -15px; font-size: 16px;">EDUCADOR Y ESPECIALISTA EN ALTO RENDIMIENTO</h3>
-            <ul style="color: var(--text-gray); padding-left: 20px; font-size: 17px; margin-top: 30px;">
-                <li style="margin-bottom: 15px;"><strong>Licenciatura en Educación:</strong> Enfoque pedagógico. Te enseño el <em>porqué</em> de cada movimiento.</li>
-                <li style="margin-bottom: 15px;"><strong>+18 Años de Experiencia:</strong> Transformando físicos y rehabilitando patologías estructurales.</li>
-                <li style="margin-bottom: 15px;"><strong>Certificaciones Élite:</strong> ISSA Certified Personal Trainer & Nutritionist, CYBEX Biomechanics Specialist.</li>
+    <section class="container grid-2">
+        <div style="text-align: left;">
+            <h2 style="font-size: 38px;">Lic. Rodolfo González</h2>
+            <h3 style="color: var(--text-gray); margin-top: -15px; font-size: 17px; letter-spacing: 2px;">EDUCADOR Y ESPECIALISTA EN ALTO RENDIMIENTO</h3>
+            <ul style="color: var(--text-gray); padding-left: 20px; font-size: 18px; margin-top: 30px; line-height: 2;">
+                <li><strong>Licenciatura en Educación:</strong> Enfoque pedagógico. Te enseño el <em>porqué</em> de cada movimiento.</li>
+                <li><strong>+18 Años de Experiencia:</strong> Transformando físicos y rehabilitando patologías estructurales.</li>
+                <li><strong>Certificaciones Élite:</strong> ISSA Certified Personal Trainer & Nutritionist, CYBEX Biomechanics Specialist.</li>
             </ul>
         </div>
-        <div class="hologram-wrapper">
-            <!-- IMAGEN 3: FOTO MÁQUINA SENTADO -->
-            <div class="hologram-scanner">
-                <img src="foto3.jpg" alt="Coach Rodolfo en Máquina" onerror="this.src='https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=800&auto=format&fit=crop';">
-            </div>
+        <div class="photo-frame">
+            <img src="foto3.jpeg" onerror="this.src='foto3.jpg'" alt="Coach Rodolfo en Máquina">
         </div>
     </section>
 
-    <!-- RESUMEN DE SERVICIOS -->
-    <section id="servicios" class="container">
-        <h2 style="text-align: center; font-size: 38px;">Pilares de Intervención Deportiva</h2>
-        <div class="grid-3">
-            <div class="card">
-                <h3>01. Entrenamiento de Resistencia</h3>
-                <p style="color: var(--text-gray); font-size: 15px;">Planificación estructural enfocada en hipertrofia y fuerza, cuidando la salud articular bajo principios biomecánicos.</p>
-            </div>
-            <div class="card">
-                <h3>02. Asesoría Nutricional</h3>
-                <p style="color: var(--text-gray); font-size: 15px;">Cálculo milimétrico de macronutrientes adaptado a tu respuesta metabólica y estilo de vida. Sin dietas de hambre.</p>
-            </div>
-            <div class="card">
-                <h3>03. Optimización con IA</h3>
-                <p style="color: var(--text-gray); font-size: 15px;">Tu expediente y biomecánica son procesados en mi ecosistema para generar progresiones matemáticas exactas y seguras.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ZONA DINÁMICA DE VIDEOS -->
-    <section id="videos" class="video-section">
+    <!-- ZONA DINÁMICA DE VIDEOS (REPRODUCTOR NATIVO LIMPIO) -->
+    <section class="video-section">
         <div class="container">
-            <h2>Auditoría en Movimiento</h2>
-            <p style="color: var(--text-gray); margin-bottom: 40px;">Ejecución técnica y consejos de optimización (Actualización dinámica).</p>
-            <div class="video-container">
-                <!-- IFRAME DE INSTAGRAM (Video 1) -->
-                <iframe src="https://www.instagram.com/reel/DWEfYDTDR8b/embed" width="400" height="480" frameborder="0" scrolling="no" allowtransparency="true" style="border-radius: 8px; border: 1px solid var(--bg-panel);"></iframe>
+            <h2 style="font-size: 38px;">Auditoría en Movimiento</h2>
+            <p style="color: var(--text-gray); font-size: 18px;">Ejecución técnica y consejos de optimización (Sin distracciones externas).</p>
+            
+            <div class="native-video-player">
+                <!-- REPRODUCTOR HTML5: Solo el video, sin logos de Instagram -->
+                <video controls controlsList="nodownload" playsinline>
+                    <source src="video.mp4" type="video/mp4">
+                    Tu navegador no soporta el reproductor de video.
+                </video>
             </div>
+
         </div>
     </section>
 
     <!-- CONTACTO / CIERRE -->
-    <section style="text-align: center; border-bottom: none; padding-bottom: 80px;">
+    <section style="text-align: center; border-bottom: none; padding-bottom: 80px; padding-top: 80px;">
         <div class="container">
             <h2 style="font-size: 45px; margin-bottom: 10px;">Inicia tu Transformación Hoy</h2>
             <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto 40px auto; font-size: 18px;">
@@ -200,10 +165,6 @@
             <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20solicitar%20una%20entrevista%20de%20diagn%C3%B3stico" target="_blank" class="btn-neon">INICIAR DIAGNÓSTICO VÍA WHATSAPP</a>
         </div>
     </section>
-
-    <footer style="background: var(--bg-panel); padding: 30px; text-align: center; color: var(--text-gray); font-size: 13px; border-top: 1px solid #333;">
-        &copy; 2024 Rodolfo González - ISSA Certified Trainer. Todos los derechos reservados.
-    </footer>
 
 </body>
 </html>
