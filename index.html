@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rodolfo González | Coach y Especialista Biomecánico</title>
+    <!-- Fuentes de Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Librería de Íconos para Redes Sociales -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
         /* CORE DESIGN SYSTEM */
@@ -25,11 +28,14 @@
         a { text-decoration: none; color: inherit; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* NAVBAR */
+        /* NAVBAR CON IMAGEN DE LOGO */
         header { background: rgba(0, 0, 0, 0.95); border-bottom: 1px solid #222; position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
         .nav-content { display: flex; justify-content: space-between; align-items: center; height: 80px; }
-        .logo { font-family: 'Rajdhani', sans-serif; font-size: 32px; font-weight: 700; color: #FFF; letter-spacing: 2px;}
-        .logo span { color: var(--neon-green); }
+        
+        /* LOGO ESTILO APP ICON */
+        .logo img { height: 55px; width: auto; border-radius: 12px; display: block; border: 1px solid #333; transition: 0.3s; }
+        .logo img:hover { box-shadow: 0 0 15px rgba(57, 255, 20, 0.4); border-color: var(--neon-green); }
+        
         .nav-links { display: flex; gap: 25px; }
         .nav-links a { font-size: 14px; font-weight: 600; text-transform: uppercase; transition: color 0.3s; }
         .nav-links a:hover { color: var(--neon-green); }
@@ -41,6 +47,12 @@
             box-shadow: 0 4px 15px rgba(57, 255, 20, 0.3); font-family: 'Inter', sans-serif; letter-spacing: 1px; font-size: 15px;
         }
         .btn-neon:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(57, 255, 20, 0.6); }
+
+        /* REDES SOCIALES EN HERO */
+        .hero-socials { margin-top: 40px; display: flex; gap: 25px; align-items: center; }
+        .hero-socials span { color: var(--text-gray); font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+        .hero-socials a { color: #FFF; font-size: 26px; transition: 0.3s; }
+        .hero-socials a:hover { color: var(--neon-green); transform: translateY(-4px); }
 
         /* SECCIONES */
         section { padding: 120px 0; border-bottom: 1px solid #1a1a1a; }
@@ -85,14 +97,15 @@
         .cert-info h4 { color: var(--neon-green); font-size: 22px; margin: 0 0 12px 0; font-family: 'Rajdhani', sans-serif; text-transform: uppercase; line-height: 1.2; }
         .cert-info p { color: var(--text-gray); font-size: 15px; margin: 0; line-height: 1.6; }
         
-        /* FOOTER SOCIAL */
-        .footer-social { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 20px; }
-        .footer-social a { color: var(--text-gray); font-size: 13px; font-weight: 600; border: 1px solid #333; padding: 10px 20px; border-radius: 4px; transition: all 0.3s; letter-spacing: 1px;}
-        .footer-social a:hover { color: #000; background: var(--neon-green); border-color: var(--neon-green); }
+        /* FOOTER SOCIAL ICONS */
+        .footer-social { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; margin-top: 25px; }
+        .footer-social a { color: var(--text-gray); font-size: 28px; transition: all 0.3s; }
+        .footer-social a:hover { color: var(--neon-green); transform: translateY(-3px); }
 
         /* RESPONSIVE */
         @media (max-width: 900px) {
             .hero, .grid-2 { flex-direction: column; text-align: center; padding-top: 120px; }
+            .hero-socials { justify-content: center; }
             .hero-text h1 { font-size: 45px; }
             .nav-links { display: none; }
             .photo-frame img { height: 450px; }
@@ -103,7 +116,10 @@
 
     <header>
         <div class="container nav-content">
-            <div class="logo">RG<span>COACHING</span></div>
+            <!-- LOGO INTEGRADO AQUÍ -->
+            <a href="#" class="logo">
+                <img src="logo.jpg" onerror="this.src='logo.jpeg'" alt="RG Coaching Logo">
+            </a>
             <nav class="nav-links">
                 <a href="#metodo">El Método</a>
                 <a href="#coach">Tu Coach</a>
@@ -118,6 +134,14 @@
             <h1>Evolución Física a través de la <span>Ciencia y Biomecánica</span></h1>
             <p>18 años de experiencia. Sin rutinas genéricas, sin adivinanzas. Diagnóstico clínico-deportivo procesado con protocolos de Inteligencia Artificial.</p>
             <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20solicitar%20una%20entrevista%20de%20diagn%C3%B3stico" target="_blank" class="btn-neon">SOLICITAR ENTREVISTA DE DIAGNÓSTICO</a>
+            
+            <!-- REDES SOCIALES VISIBLES EN PORTADA -->
+            <div class="hero-socials">
+                <span>Sígueme:</span>
+                <a href="https://www.instagram.com/rodolfoissa_coach?igsh=bjZ4Mm1rZWUxMDd4" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@rg.trainer?_r=1&_t=ZS-96lgbfyosC5" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://www.facebook.com/share/1FvFoYsLKw/" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
         </div>
         <div class="photo-frame">
             <img src="foto1.jpg.jpeg" alt="Coach Rodolfo Evaluando">
@@ -161,7 +185,6 @@
         
         <div class="cert-grid">
             
-            <!-- TÍTULO UNIVERSITARIO -->
             <div class="cert-card" style="border-color: var(--neon-green); box-shadow: 0 0 15px rgba(57,255,20,0.1);">
                 <div class="cert-img-container">
                     <img src="cert_uni.jpeg" alt="Título Universitario Licenciatura en Educación">
@@ -172,7 +195,6 @@
                 </div>
             </div>
 
-            <!-- Cert 1 -->
             <div class="cert-card">
                 <div class="cert-img-container">
                     <img src="cert1.jpg" alt="ISSA Personal Trainer">
@@ -183,7 +205,6 @@
                 </div>
             </div>
             
-            <!-- Cert 2 -->
             <div class="cert-card">
                 <div class="cert-img-container">
                     <img src="cert2.jpg" alt="ISSA Nutrition Coach">
@@ -194,7 +215,6 @@
                 </div>
             </div>
 
-            <!-- Cert 3 -->
             <div class="cert-card">
                 <div class="cert-img-container">
                     <img src="cert3.png" alt="CYBEX Biomechanics">
@@ -205,7 +225,6 @@
                 </div>
             </div>
 
-            <!-- Cert 4 -->
             <div class="cert-card">
                 <div class="cert-img-container">
                     <img src="cert4.jpg" alt="IUNAV IA">
@@ -216,7 +235,6 @@
                 </div>
             </div>
             
-            <!-- Cert 5 -->
             <div class="cert-card">
                 <div class="cert-img-container">
                     <img src="cert5.png" alt="Patologías LUZ">
@@ -227,7 +245,6 @@
                 </div>
             </div>
 
-            <!-- Cert 6 -->
             <div class="cert-card">
                 <div class="cert-img-container">
                     <img src="cert6.png" alt="Coach de Salud LIGHT">
@@ -265,4 +282,24 @@
     </section>
 
     <footer style="background: var(--bg-panel); padding: 50px 20px 30px 20px; text-align: center; border-top: 1px solid #222;">
-        <div class="logo" style="font-size: 24px; margin-bottom: 20px;">RG<span>COACHING</span></div>
+        <!-- Logo en Footer -->
+        <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+            <img src="logo.jpg" onerror="this.src='logo.jpeg'" alt="RG Logo" style="height: 60px; border-radius: 12px; border: 1px solid #333;">
+        </div>
+        <p style="color: var(--text-gray); font-size: 15px;">Conectemos a través de mis plataformas:</p>
+        
+        <!-- REDES SOCIALES ENLAZADAS CON ICONOS GRANDES -->
+        <div class="footer-social">
+            <a href="https://www.instagram.com/rodolfoissa_coach?igsh=bjZ4Mm1rZWUxMDd4" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@rg.trainer?_r=1&_t=ZS-96lgbfyosC5" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/share/1FvFoYsLKw/" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        
+        <p style="color: var(--text-gray); font-size: 13px; margin-top: 40px;">
+            &copy; 2024 Rodolfo González - Especialista en Biomecánica e ISSA Certified Trainer.<br>Todos los derechos reservados.
+        </p>
+    </footer>
+
+</body>
+</html>
