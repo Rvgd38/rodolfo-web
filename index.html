@@ -32,18 +32,21 @@
         header { background: rgba(0, 0, 0, 0.95); border-bottom: 1px solid #222; position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
         .nav-content { display: flex; justify-content: space-between; align-items: center; height: 80px; }
         
-        /* LOGO ESTILO APP ICON */
-        .logo img { height: 50px; width: auto; border-radius: 10px; display: block; border: 1px solid #333; transition: 0.3s; }
-        .logo img:hover { box-shadow: 0 0 15px rgba(57, 255, 20, 0.4); border-color: var(--neon-green); }
+        /* BLOQUE DE MARCA (LOGO + TEXTO + REDES) */
+        .brand-group { display: flex; align-items: center; gap: 12px; }
+        .logo-img img { height: 45px; width: auto; border-radius: 10px; display: block; border: 1px solid #333; transition: 0.3s; }
+        .logo-img img:hover { box-shadow: 0 0 15px rgba(57, 255, 20, 0.4); border-color: var(--neon-green); }
+        .brand-text { font-family: 'Rajdhani', sans-serif; font-size: 24px; font-weight: 700; color: #FFF; letter-spacing: 1px; }
+        .brand-text span { color: var(--neon-green); }
         
+        .header-socials { display: flex; gap: 12px; border-left: 1px solid #333; padding-left: 12px; margin-left: 5px; }
+        .header-socials a { color: var(--text-light); font-size: 16px; transition: 0.3s; }
+        .header-socials a:hover { color: var(--neon-green); transform: translateY(-2px); }
+
+        /* ENLACES DERECHOS */
         .nav-links { display: flex; gap: 25px; align-items: center; }
         .nav-links a.link-text { font-size: 14px; font-weight: 600; text-transform: uppercase; transition: color 0.3s; }
         .nav-links a.link-text:hover { color: var(--neon-green); }
-
-        /* REDES SOCIALES EN NAVBAR (SUPERIOR) */
-        .header-socials { display: flex; gap: 15px; border-left: 1px solid #333; padding-left: 20px; }
-        .header-socials a { color: var(--text-light); font-size: 18px; transition: 0.3s; }
-        .header-socials a:hover { color: var(--neon-green); transform: translateY(-2px); }
 
         /* BOTONES CTAs */
         .btn-neon {
@@ -97,8 +100,8 @@
         .cert-info p { color: var(--text-gray); font-size: 14px; margin: 0; line-height: 1.5; }
         
         /* FOOTER SOCIAL ICONS */
-        .footer-social { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; margin-top: 25px; }
-        .footer-social a { color: var(--text-gray); font-size: 26px; transition: all 0.3s; }
+        .footer-social { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 20px; }
+        .footer-social a { color: var(--text-light); font-size: 32px; transition: all 0.3s; }
         .footer-social a:hover { color: var(--neon-green); transform: translateY(-3px); }
 
         /* =========================================
@@ -106,21 +109,25 @@
            ========================================= */
         @media (max-width: 900px) {
             /* Navbar Móvil */
-            .nav-content { padding: 10px 0; }
-            .nav-links a.link-text { display: none; } /* Oculta el texto para hacer espacio */
-            .header-socials { border-left: none; padding-left: 0; gap: 12px; }
+            .nav-content { justify-content: center; padding: 15px 0; }
+            .nav-links { display: none; } /* Oculta enlaces derechos */
+            
+            /* Ajuste del bloque de marca en celular */
+            .brand-group { gap: 8px; flex-wrap: wrap; justify-content: center; }
+            .brand-text { font-size: 20px; }
+            .logo-img img { height: 40px; }
+            .header-socials { border-left: none; padding-left: 5px; gap: 15px; margin-left: 0; }
+            .header-socials a { font-size: 18px; }
             
             /* Ajustes Generales Móvil */
             section { padding: 60px 0; }
-            .hero { flex-direction: column; text-align: center; padding-top: 100px; gap: 30px; }
+            .hero { flex-direction: column; text-align: center; padding-top: 130px; gap: 30px; }
             .hero-text h1 { font-size: 38px; margin-bottom: 15px; }
             .hero-text p { font-size: 16px; margin: 0 auto 30px auto; }
             .btn-neon { width: 100%; padding: 15px 20px; font-size: 14px; }
             
             /* Grillas a 1 Columna */
             .grid-2 { grid-template-columns: 1fr; gap: 40px; text-align: center; }
-            
-            /* Corrección de alineación forzada en móvil */
             .text-box { text-align: center !important; }
             .text-box h2 { font-size: 32px !important; }
             .text-box ul { text-align: left; display: inline-block; }
@@ -132,26 +139,30 @@
 </head>
 <body>
 
-    <!-- NAVEGACIÓN SUPERIOR (CON LOGO Y REDES) -->
+    <!-- NAVEGACIÓN SUPERIOR UNIFICADA -->
     <header>
         <div class="container nav-content">
-            <!-- LOGO CORREGIDO EXACTO A logo.png -->
-            <a href="#" class="logo">
-                <img src="logo.png" alt="RG Coaching Logo">
-            </a>
             
+            <!-- BLOQUE IZQUIERDO: LOGO + TEXTO + REDES -->
+            <div class="brand-group">
+                <a href="#" class="logo-img">
+                    <img src="logo.png" alt="RG Coaching Logo">
+                </a>
+                <div class="brand-text">RG<span>coach</span></div>
+                
+                <div class="header-socials">
+                    <a href="https://www.instagram.com/rodolfoissa_coach?igsh=bjZ4Mm1rZWUxMDd4" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@rg.trainer?_r=1&_t=ZS-96lgbfyosC5" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.facebook.com/share/1FvFoYsLKw/" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <!-- BLOQUE DERECHO: ENLACES -->
             <nav class="nav-links">
                 <a href="#metodo" class="link-text">El Método</a>
                 <a href="#coach" class="link-text">Tu Coach</a>
                 <a href="#certificaciones" class="link-text">Certificaciones</a>
-                
-                <!-- REDES SOCIALES INTEGRADAS ARRIBA -->
-                <div class="header-socials">
-                    <a href="https://www.instagram.com/rodolfoissa_coach?igsh=bjZ4Mm1rZWUxMDd4" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@rg.trainer?_r=1&_t=ZS-96lgbfyosC5" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="https://www.facebook.com/share/1FvFoYsLKw/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-                </div>
             </nav>
         </div>
     </header>
@@ -301,12 +312,21 @@
     </section>
 
     <footer style="background: var(--bg-panel); padding: 50px 20px 30px 20px; text-align: center; border-top: 1px solid #222;">
-        <!-- Logo en Footer -->
-        <div style="display: flex; justify-content: center; margin-bottom: 20px;">
-            <img src="logo.png" alt="RG Logo" style="height: 60px; border-radius: 12px; border: 1px solid #333;">
-        </div>
-        <p style="color: var(--text-gray); font-size: 15px;">Conectemos a través de mis plataformas:</p>
+        
+        <p style="color: var(--text-gray); font-size: 16px; letter-spacing: 1px;">Conectemos a través de mis plataformas:</p>
         
         <!-- REDES SOCIALES EN FOOTER -->
         <div class="footer-social">
-            <a href="https://www.instagram.com/rodolfoissa_coach?igsh=bjZ4Mm1rZWUxMDd4" target="_blank" title="Instagram
+            <a href="https://www.instagram.com/rodolfoissa_coach?igsh=bjZ4Mm1rZWUxMDd4" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@rg.trainer?_r=1&_t=ZS-96lgbfyosC5" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/share/1FvFoYsLKw/" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        
+        <p style="color: var(--text-gray); font-size: 13px; margin-top: 40px;">
+            &copy; 2024 Rodolfo González - Especialista en Biomecánica e ISSA Certified Trainer.<br>Todos los derechos reservados.
+        </p>
+    </footer>
+
+</body>
+</html>
