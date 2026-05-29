@@ -30,6 +30,9 @@
         .nav-content { display: flex; justify-content: space-between; align-items: center; height: 80px; }
         .logo { font-family: 'Rajdhani', sans-serif; font-size: 32px; font-weight: 700; color: #FFF; letter-spacing: 2px;}
         .logo span { color: var(--neon-green); }
+        .nav-links { display: flex; gap: 25px; }
+        .nav-links a { font-size: 14px; font-weight: 600; text-transform: uppercase; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--neon-green); }
 
         /* BOTONES CTAs */
         .btn-neon {
@@ -61,11 +64,7 @@
 
         /* GRID SYSTEM */
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
-        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
-        .card { background: var(--bg-panel); padding: 40px; border-radius: 8px; border-top: 3px solid var(--neon-green); transition: transform 0.3s; }
-        .card:hover { transform: translateY(-10px); }
-        .card h3 { color: var(--neon-green); font-size: 24px; margin-top: 0;}
-
+        
         /* REPRODUCTOR DE VIDEO NATIVO */
         .video-section { text-align: center; background: #080808; padding: 100px 20px; }
         .native-video-player {
@@ -74,12 +73,28 @@
             border: 2px solid #222; box-shadow: 0 10px 30px rgba(0,0,0,0.9);
         }
         .native-video-player video { width: 100%; display: block; background-color: #000; }
+
+        /* GALERÍA DE CERTIFICADOS */
+        .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; margin-top: 50px; }
+        .cert-card { background: var(--bg-panel); border-radius: 8px; overflow: hidden; border: 1px solid #333; transition: transform 0.3s, box-shadow 0.3s; }
+        .cert-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(57,255,20,0.15); border-color: var(--neon-green); }
+        .cert-img-container { width: 100%; height: 240px; background: #050505; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid #333; padding: 15px;}
+        .cert-img-container img { max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(15%); transition: filter 0.3s; }
+        .cert-card:hover .cert-img-container img { filter: grayscale(0%); }
+        .cert-info { padding: 30px; }
+        .cert-info h4 { color: var(--neon-green); font-size: 22px; margin: 0 0 12px 0; font-family: 'Rajdhani', sans-serif; text-transform: uppercase; line-height: 1.2; }
+        .cert-info p { color: var(--text-gray); font-size: 15px; margin: 0; line-height: 1.6; }
         
+        /* FOOTER SOCIAL */
+        .footer-social { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 20px; }
+        .footer-social a { color: var(--text-gray); font-size: 13px; font-weight: 600; border: 1px solid #333; padding: 10px 20px; border-radius: 4px; transition: all 0.3s; letter-spacing: 1px;}
+        .footer-social a:hover { color: #000; background: var(--neon-green); border-color: var(--neon-green); }
+
         /* RESPONSIVE */
         @media (max-width: 900px) {
             .hero, .grid-2 { flex-direction: column; text-align: center; padding-top: 120px; }
             .hero-text h1 { font-size: 45px; }
-            .grid-3 { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
             .photo-frame img { height: 450px; }
         }
     </style>
@@ -89,6 +104,12 @@
     <header>
         <div class="container nav-content">
             <div class="logo">RG<span>COACHING</span></div>
+            <nav class="nav-links">
+                <a href="#metodo">El Método</a>
+                <a href="#coach">Tu Coach</a>
+                <a href="#certificaciones">Certificaciones</a>
+                <a href="#videos">Auditoría</a>
+            </nav>
         </div>
     </header>
 
@@ -99,14 +120,12 @@
             <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20solicitar%20una%20entrevista%20de%20diagn%C3%B3stico" target="_blank" class="btn-neon">SOLICITAR ENTREVISTA DE DIAGNÓSTICO</a>
         </div>
         <div class="photo-frame">
-            <!-- RUTAS CORREGIDAS AL SERVIDOR -->
             <img src="foto1.jpg.jpeg" alt="Coach Rodolfo Evaluando">
         </div>
     </section>
 
-    <section class="container grid-2">
+    <section id="metodo" class="container grid-2">
         <div class="photo-frame">
-            <!-- RUTAS CORREGIDAS AL SERVIDOR -->
             <img src="foto2.jpg.jpeg" alt="Biomecánica Aplicada">
         </div>
         <div style="text-align: left;">
@@ -120,7 +139,7 @@
         </div>
     </section>
 
-    <section class="container grid-2">
+    <section id="coach" class="container grid-2">
         <div style="text-align: left;">
             <h2 style="font-size: 38px;">Lic. Rodolfo González</h2>
             <h3 style="color: var(--text-gray); margin-top: -15px; font-size: 17px; letter-spacing: 2px;">EDUCADOR Y ESPECIALISTA EN ALTO RENDIMIENTO</h3>
@@ -131,18 +150,102 @@
             </ul>
         </div>
         <div class="photo-frame">
-            <!-- RUTAS CORREGIDAS AL SERVIDOR -->
             <img src="foto3.jpg.jpeg" alt="Coach Rodolfo en Máquina">
         </div>
     </section>
 
-    <section class="video-section">
+    <!-- SECCIÓN DE CERTIFICADOS -->
+    <section id="certificaciones" class="container">
+        <h2 style="text-align: center; font-size: 42px; margin-bottom: 20px;">Avalado por la Ciencia y la Academia</h2>
+        <p style="text-align: center; color: var(--text-gray); font-size: 18px; max-width: 700px; margin: 0 auto;">Mi metodología no se basa en modas, sino en años de formación académica y certificaciones internacionales que garantizan tu seguridad y éxito.</p>
+        
+        <div class="cert-grid">
+            
+            <!-- TÍTULO UNIVERSITARIO (Tarjeta Principal Destacada) -->
+            <div class="cert-card" style="border-color: var(--neon-green); box-shadow: 0 0 15px rgba(57,255,20,0.1);">
+                <div class="cert-img-container">
+                    <img src="cert_uni.jpg" onerror="this.src='cert_uni.jpg.jpeg'" alt="Título Universitario Licenciatura en Educación">
+                </div>
+                <div class="cert-info">
+                    <h4>Licenciatura en Educación</h4>
+                    <p>Formación universitaria con base pedagógica y didáctica. El fundamento absoluto para enseñar, instruir y transformar con ciencia.</p>
+                </div>
+            </div>
+
+            <!-- Cert 1 -->
+            <div class="cert-card">
+                <div class="cert-img-container">
+                    <img src="cert1.jpg" onerror="this.src='cert1.jpg.jpeg'" alt="ISSA Personal Trainer">
+                </div>
+                <div class="cert-info">
+                    <h4>ISSA Certified Personal Trainer</h4>
+                    <p>Entrenamientos basados en metodologías globales actualizadas para resultados reales y sostenibles.</p>
+                </div>
+            </div>
+            
+            <!-- Cert 2 -->
+            <div class="cert-card">
+                <div class="cert-img-container">
+                    <img src="cert2.jpg" onerror="this.src='cert2.jpg.jpeg'" alt="ISSA Nutrition Coach">
+                </div>
+                <div class="cert-info">
+                    <h4>ISSA Nutrition Coach</h4>
+                    <p>Orientación nutricional práctica y basada en evidencia para potenciar los resultados y el bienestar general.</p>
+                </div>
+            </div>
+
+            <!-- Cert 3 -->
+            <div class="cert-card">
+                <div class="cert-img-container">
+                    <img src="cert3.jpg" onerror="this.src='cert3.jpg.jpeg'" alt="CYBEX Biomechanics">
+                </div>
+                <div class="cert-info">
+                    <h4>Especialista en Biomecánica (CYBEX)</h4>
+                    <p>Análisis profundo de la mecánica humana para maximizar el estímulo muscular con cero riesgo de lesiones.</p>
+                </div>
+            </div>
+
+            <!-- Cert 4 -->
+            <div class="cert-card">
+                <div class="cert-img-container">
+                    <img src="cert4.jpg" onerror="this.src='cert4.jpg.jpeg'" alt="IUNAV IA">
+                </div>
+                <div class="cert-info">
+                    <h4>Innovación Digital con IA (IUNAV)</h4>
+                    <p>Integración de Inteligencia Artificial para el análisis biométrico y la optimización de protocolos a nivel matemático.</p>
+                </div>
+            </div>
+            
+            <!-- Cert 5 -->
+            <div class="cert-card">
+                <div class="cert-img-container">
+                    <img src="cert5.jpg" onerror="this.src='cert5.jpg.jpeg'" alt="Patologías LUZ">
+                </div>
+                <div class="cert-info">
+                    <h4>Prescripción para Patologías (LUZ)</h4>
+                    <p>Diseño de planes seguros para personas con condiciones médicas específicas, garantizando salud integral.</p>
+                </div>
+            </div>
+
+            <!-- Cert 6 -->
+            <div class="cert-card">
+                <div class="cert-img-container">
+                    <img src="cert6.jpg" onerror="this.src='cert6.jpg.jpeg'" alt="Coach de Salud LIGHT">
+                </div>
+                <div class="cert-info">
+                    <h4>Coach de Salud (Fundación LIGHT)</h4>
+                    <p>Formación acreditada para promover hábitos de vida saludables y prevención de enfermedades.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="videos" class="video-section">
         <div class="container">
             <h2 style="font-size: 38px;">Auditoría en Movimiento</h2>
             <p style="color: var(--text-gray); font-size: 18px;">Ejecución técnica y consejos de optimización.</p>
             
             <div class="native-video-player">
-                <!-- RUTA CORREGIDA AL SERVIDOR -->
                 <video controls controlsList="nodownload" playsinline>
                     <source src="video.mp4.mp4" type="video/mp4">
                     Tu navegador no soporta el reproductor de video.
@@ -151,7 +254,7 @@
         </div>
     </section>
 
-    <section style="text-align: center; border-bottom: none; padding-bottom: 80px; padding-top: 80px;">
+    <section style="text-align: center; border-bottom: none; padding-bottom: 60px; padding-top: 80px;">
         <div class="container">
             <h2 style="font-size: 45px; margin-bottom: 10px;">Inicia tu Transformación Hoy</h2>
             <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto 40px auto; font-size: 18px;">
@@ -160,6 +263,23 @@
             <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20solicitar%20una%20entrevista%20de%20diagn%C3%B3stico" target="_blank" class="btn-neon">INICIAR DIAGNÓSTICO VÍA WHATSAPP</a>
         </div>
     </section>
+
+    <footer style="background: var(--bg-panel); padding: 50px 20px 30px 20px; text-align: center; border-top: 1px solid #222;">
+        <div class="logo" style="font-size: 24px; margin-bottom: 20px;">RG<span>COACHING</span></div>
+        <p style="color: var(--text-gray); font-size: 15px;">Conectemos a través de mis plataformas:</p>
+        
+        <!-- REDES SOCIALES ENLAZADAS -->
+        <div class="footer-social">
+            <a href="https://www.instagram.com/rodolfoissa_coach" target="_blank">INSTAGRAM</a>
+            <a href="https://www.tiktok.com/@rg.trainer" target="_blank">TIKTOK</a>
+            <a href="https://www.facebook.com/share/1FvFoYsLKw/" target="_blank">FACEBOOK</a>
+            <a href="https://wa.me/584141109723" target="_blank">WHATSAPP</a>
+        </div>
+        
+        <p style="color: var(--text-gray); font-size: 13px; margin-top: 40px;">
+            &copy; 2024 Rodolfo González - Especialista en Biomecánica e ISSA Certified Trainer.<br>Todos los derechos reservados.
+        </p>
+    </footer>
 
 </body>
 </html>
