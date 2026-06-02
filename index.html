@@ -32,7 +32,7 @@
         header { background: rgba(0, 0, 0, 0.95); border-bottom: 1px solid #222; position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
         .nav-content { display: flex; justify-content: space-between; align-items: center; height: 80px; }
         
-        /* BLOQUE DE MARCA (LOGO + TEXTO + REDES) */
+        /* BLOQUE DE MARCA */
         .brand-group { display: flex; align-items: center; gap: 12px; }
         .logo-img img { height: 45px; width: auto; border-radius: 10px; display: block; border: 1px solid #333; transition: 0.3s; }
         .logo-img img:hover { box-shadow: 0 0 15px rgba(57, 255, 20, 0.4); border-color: var(--neon-green); }
@@ -79,14 +79,19 @@
         /* GRID SYSTEM */
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         
-        /* REPRODUCTOR DE VIDEO NATIVO */
+        /* GALERÍA DE VIDEOS CORTOS (ESCALABLE) */
         .video-section { text-align: center; background: #080808; padding: 80px 20px; }
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 40px; }
+        
         .native-video-player {
-            max-width: 400px; width: 100%; margin: 30px auto 0 auto;
-            border-radius: 16px; overflow: hidden;
+            width: 100%; margin: 0 auto;
+            border-radius: 12px; overflow: hidden;
             border: 2px solid #222; box-shadow: 0 10px 30px rgba(0,0,0,0.9);
+            transition: transform 0.3s, border-color 0.3s;
+            background-color: #000;
         }
-        .native-video-player video { width: 100%; display: block; background-color: #000; }
+        .native-video-player:hover { transform: translateY(-5px); border-color: var(--neon-green); }
+        .native-video-player video { width: 100%; display: block; max-height: 550px; object-fit: contain; }
 
         /* GALERÍA DE CERTIFICADOS */
         .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
@@ -104,49 +109,38 @@
         .footer-social a { color: var(--text-light); font-size: 32px; transition: all 0.3s; }
         .footer-social a:hover { color: var(--neon-green); transform: translateY(-3px); }
 
-        /* =========================================
-           OPTIMIZACIÓN MÓVIL (RESPONSIVE)
-           ========================================= */
+        /* OPTIMIZACIÓN MÓVIL */
         @media (max-width: 900px) {
-            /* Navbar Móvil */
             .nav-content { justify-content: center; padding: 15px 0; }
-            .nav-links { display: none; } /* Oculta enlaces derechos */
+            .nav-links { display: none; } 
             
-            /* Ajuste del bloque de marca en celular */
             .brand-group { gap: 8px; flex-wrap: wrap; justify-content: center; }
             .brand-text { font-size: 20px; }
             .logo-img img { height: 40px; }
             .header-socials { border-left: none; padding-left: 5px; gap: 15px; margin-left: 0; }
-            .header-socials a { font-size: 18px; }
             
-            /* Ajustes Generales Móvil */
             section { padding: 60px 0; }
             .hero { flex-direction: column; text-align: center; padding-top: 130px; gap: 30px; }
             .hero-text h1 { font-size: 38px; margin-bottom: 15px; }
             .hero-text p { font-size: 16px; margin: 0 auto 30px auto; }
             .btn-neon { width: 100%; padding: 15px 20px; font-size: 14px; }
             
-            /* Grillas a 1 Columna */
             .grid-2 { grid-template-columns: 1fr; gap: 40px; text-align: center; }
             .text-box { text-align: center !important; }
             .text-box h2 { font-size: 32px !important; }
             .text-box ul { text-align: left; display: inline-block; }
             
-            /* Imágenes Móvil */
             .photo-frame img { max-height: 400px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVEGACIÓN SUPERIOR UNIFICADA -->
     <header>
         <div class="container nav-content">
-            
-            <!-- BLOQUE IZQUIERDO: LOGO + TEXTO + REDES -->
             <div class="brand-group">
                 <a href="#" class="logo-img">
-                    <img src="logo.png" alt="RG Coaching Logo">
+                    <img src="logo.png" onerror="this.src='logo.jpg'" alt="RG Coaching Logo">
                 </a>
                 <div class="brand-text">RG<span>coach</span></div>
                 
@@ -158,7 +152,6 @@
                 </div>
             </div>
             
-            <!-- BLOQUE DERECHO: ENLACES -->
             <nav class="nav-links">
                 <a href="#metodo" class="link-text">El Método</a>
                 <a href="#coach" class="link-text">Tu Coach</a>
@@ -174,13 +167,13 @@
             <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20solicitar%20una%20entrevista%20de%20diagn%C3%B3stico" target="_blank" class="btn-neon">SOLICITAR ENTREVISTA DE DIAGNÓSTICO</a>
         </div>
         <div class="photo-frame">
-            <img src="foto1.jpg.jpeg" alt="Coach Rodolfo Evaluando">
+            <img src="foto1.jpg.jpeg" onerror="this.src='foto1.jpg'" alt="Coach Rodolfo Evaluando">
         </div>
     </section>
 
     <section id="metodo" class="container grid-2">
         <div class="photo-frame">
-            <img src="foto2.jpg.jpeg" alt="Biomecánica Aplicada">
+            <img src="foto2.jpg.jpeg" onerror="this.src='foto2.jpg'" alt="Biomecánica Aplicada">
         </div>
         <div class="text-box" style="text-align: left;">
             <h2 style="font-size: 42px; line-height: 1.1;">¿Por qué las rutinas genéricas <span style="color:var(--neon-green);">fallan</span>?</h2>
@@ -204,17 +197,16 @@
             </ul>
         </div>
         <div class="photo-frame">
-            <img src="foto3.jpg.jpeg" alt="Coach Rodolfo en Máquina">
+            <!-- AQUÍ SUSTITUI LA FOTO DE LA MÁQUINA POR LA NUEVA FOTO 4 -->
+            <img src="foto4.jpeg" onerror="this.src='foto4.jpg'; this.onerror=function(){this.src='foto4.jpg.jpeg'};" alt="Coach Rodolfo Liderazgo">
         </div>
     </section>
 
-    <!-- SECCIÓN DE CERTIFICADOS CON RUTAS EXACTAS -->
     <section id="certificaciones" class="container">
         <h2 style="text-align: center; font-size: 38px; margin-bottom: 20px;">Avalado por la Ciencia y la Academia</h2>
         <p style="text-align: center; color: var(--text-gray); font-size: 16px; max-width: 700px; margin: 0 auto;">Mi metodología no se basa en modas, sino en años de formación académica y certificaciones internacionales que garantizan tu seguridad y éxito.</p>
         
         <div class="cert-grid">
-            
             <div class="cert-card" style="border-color: var(--neon-green); box-shadow: 0 0 15px rgba(57,255,20,0.1);">
                 <div class="cert-img-container">
                     <img src="cert_uni.jpeg" alt="Título Universitario Licenciatura en Educación">
@@ -287,16 +279,29 @@
         </div>
     </section>
 
+    <!-- GALERÍA DINÁMICA DE VIDEOS -->
     <section id="videos" class="video-section">
         <div class="container">
             <h2 style="font-size: 38px;">Auditoría en Movimiento</h2>
             <p style="color: var(--text-gray); font-size: 16px;">Ejecución técnica y consejos de optimización.</p>
             
-            <div class="native-video-player">
-                <video controls controlsList="nodownload" playsinline>
-                    <source src="video.mp4.mp4" type="video/mp4">
-                    Tu navegador no soporta el reproductor de video.
-                </video>
+            <!-- EL SISTEMA "GRID" QUE ACOMODA LOS VIDEOS AUTOMÁTICAMENTE -->
+            <div class="video-grid">
+                
+                <!-- VIDEO 1 (El antiguo) -->
+                <div class="native-video-player">
+                    <video controls controlsList="nodownload" playsinline>
+                        <source src="video.mp4.mp4" onerror="this.src='video.mp4'" type="video/mp4">
+                    </video>
+                </div>
+
+                <!-- VIDEO 2 (El nuevo de la IA) -->
+                <div class="native-video-player">
+                    <video controls controlsList="nodownload" playsinline>
+                        <source src="video2.mp4" onerror="this.src='video2.mp4.mp4'" type="video/mp4">
+                    </video>
+                </div>
+
             </div>
         </div>
     </section>
@@ -312,10 +317,11 @@
     </section>
 
     <footer style="background: var(--bg-panel); padding: 50px 20px 30px 20px; text-align: center; border-top: 1px solid #222;">
-        
+        <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+            <img src="logo.png" onerror="this.src='logo.jpg'" alt="RG Logo" style="height: 60px; border-radius: 12px; border: 1px solid #333;">
+        </div>
         <p style="color: var(--text-gray); font-size: 16px; letter-spacing: 1px;">Conectemos a través de mis plataformas:</p>
         
-        <!-- REDES SOCIALES EN FOOTER -->
         <div class="footer-social">
             <a href="https://www.instagram.com/rodolfoissa_coach?igsh=bjZ4Mm1rZWUxMDd4" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://www.tiktok.com/@rg.trainer?_r=1&_t=ZS-96lgbfyosC5" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
