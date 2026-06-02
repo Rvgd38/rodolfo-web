@@ -59,7 +59,7 @@
         /* SECCIONES */
         section { padding: 100px 0; border-bottom: 1px solid #1a1a1a; }
         
-        /* HERO SECTION */
+        /* HERO SECTION (PORTADA) */
         .hero { display: flex; align-items: center; justify-content: space-between; gap: 50px; min-height: 100vh; padding-top: 120px; }
         .hero-text { flex: 1; }
         .hero-text h1 { font-size: 58px; line-height: 1.1; margin-bottom: 25px; }
@@ -79,10 +79,9 @@
         /* GRID SYSTEM */
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         
-        /* GALERÍA DE VIDEOS CORTOS (ESCALABLE) */
+        /* GALERÍA DE VIDEOS */
         .video-section { text-align: center; background: #080808; padding: 80px 20px; }
         .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 40px; }
-        
         .native-video-player {
             width: 100%; margin: 0 auto;
             border-radius: 12px; overflow: hidden;
@@ -109,7 +108,9 @@
         .footer-social a { color: var(--text-light); font-size: 32px; transition: all 0.3s; }
         .footer-social a:hover { color: var(--neon-green); transform: translateY(-3px); }
 
-        /* OPTIMIZACIÓN MÓVIL */
+        /* =========================================
+           OPTIMIZACIÓN MÓVIL ESTRICTA (RESPONSIVE)
+           ========================================= */
         @media (max-width: 900px) {
             .nav-content { justify-content: center; padding: 15px 0; }
             .nav-links { display: none; } 
@@ -120,12 +121,21 @@
             .header-socials { border-left: none; padding-left: 5px; gap: 15px; margin-left: 0; }
             
             section { padding: 60px 0; }
-            .hero { flex-direction: column; text-align: center; padding-top: 130px; gap: 30px; }
+            
+            /* REGLA DE ORDENAMIENTO (FOTO ARRIBA, TEXTO ABAJO) */
+            .hero { display: flex; flex-direction: column; text-align: center; padding-top: 130px; gap: 30px; }
+            .hero .photo-frame { order: -1; margin-bottom: 15px; } /* Sube la foto 1 */
+            .hero .hero-text { order: 1; } /* Baja el texto 1 */
+            
+            .grid-2 { display: flex; flex-direction: column; gap: 40px; text-align: center; }
+            .grid-2 .photo-frame { order: -1; margin-bottom: 15px; } /* Sube la foto 2 y 4 */
+            .grid-2 .text-box { order: 1; } /* Baja el texto 2 y 4 */
+
+            /* Ajuste de fuentes móviles */
             .hero-text h1 { font-size: 38px; margin-bottom: 15px; }
             .hero-text p { font-size: 16px; margin: 0 auto 30px auto; }
             .btn-neon { width: 100%; padding: 15px 20px; font-size: 14px; }
             
-            .grid-2 { grid-template-columns: 1fr; gap: 40px; text-align: center; }
             .text-box { text-align: center !important; }
             .text-box h2 { font-size: 32px !important; }
             .text-box ul { text-align: left; display: inline-block; }
@@ -197,7 +207,6 @@
             </ul>
         </div>
         <div class="photo-frame">
-            <!-- AQUÍ SUSTITUI LA FOTO DE LA MÁQUINA POR LA NUEVA FOTO 4 -->
             <img src="foto4.jpeg" onerror="this.src='foto4.jpg'; this.onerror=function(){this.src='foto4.jpg.jpeg'};" alt="Coach Rodolfo Liderazgo">
         </div>
     </section>
@@ -285,17 +294,14 @@
             <h2 style="font-size: 38px;">Auditoría en Movimiento</h2>
             <p style="color: var(--text-gray); font-size: 16px;">Ejecución técnica y consejos de optimización.</p>
             
-            <!-- EL SISTEMA "GRID" QUE ACOMODA LOS VIDEOS AUTOMÁTICAMENTE -->
             <div class="video-grid">
                 
-                <!-- VIDEO 1 (El antiguo) -->
                 <div class="native-video-player">
                     <video controls controlsList="nodownload" playsinline>
                         <source src="video.mp4.mp4" onerror="this.src='video.mp4'" type="video/mp4">
                     </video>
                 </div>
 
-                <!-- VIDEO 2 (El nuevo de la IA) -->
                 <div class="native-video-player">
                     <video controls controlsList="nodownload" playsinline>
                         <source src="video2.mp4" onerror="this.src='video2.mp4.mp4'" type="video/mp4">
