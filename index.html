@@ -4,34 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- ETIQUETAS SEO Y OPEN GRAPH ACTUALIZADAS -->
     <title>Rodolfo González | Coach y Especialista en Bienestar</title>
     <meta name="description" content="Entrenamiento inteligente para mentes ocupadas. Reduce el estrés y logra tu mejor versión física.">
     <meta property="og:title" content="Coach Rodolfo González | Especialista en Bienestar">
     <meta property="og:description" content="Reduce la fatiga mental y transforma tu físico. Inicia tu camino al bienestar hoy.">
-    <!-- Usamos el logo porque su peso ligero garantiza que WhatsApp lo muestre -->
-    <meta property="og:image" content="https://rodolfogonzalez.vercel.app/logo.png">
+    <meta property="og:image" itemprop="image" content="https://rodolfogonzalez.vercel.app/logo.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="400">
     <meta property="og:url" content="https://rodolfogonzalez.vercel.app/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Fuentes de Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
-    <!-- Librería de Íconos para Redes Sociales -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
-        /* CORE DESIGN SYSTEM */
-        :root {
-            --bg-dark: #000000;
-            --bg-panel: #111111;
-            --neon-green: #39FF14;
-            --text-light: #E0E0E0;
-            --text-gray: #888888;
-        }
-        
+        :root { --bg-dark: #000000; --bg-panel: #111111; --neon-green: #39FF14; --text-light: #E0E0E0; --text-gray: #888888; }
         * { box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body { margin: 0; background-color: var(--bg-dark); color: var(--text-light); font-family: 'Inter', sans-serif; line-height: 1.6; overflow-x: hidden; }
@@ -39,11 +30,9 @@
         a { text-decoration: none; color: inherit; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* NAVBAR PREMIUM */
         header { background: rgba(0, 0, 0, 0.95); border-bottom: 1px solid #222; position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
         .nav-content { display: flex; justify-content: space-between; align-items: center; height: 80px; }
         
-        /* BLOQUE DE MARCA */
         .brand-group { display: flex; align-items: center; gap: 12px; }
         .logo-img img { height: 45px; width: auto; border-radius: 10px; display: block; border: 1px solid #333; transition: 0.3s; }
         .logo-img img:hover { box-shadow: 0 0 15px rgba(57, 255, 20, 0.4); border-color: var(--neon-green); }
@@ -54,12 +43,10 @@
         .header-socials a { color: var(--text-light); font-size: 16px; transition: 0.3s; }
         .header-socials a:hover { color: var(--neon-green); transform: translateY(-2px); }
 
-        /* ENLACES DERECHOS */
         .nav-links { display: flex; gap: 25px; align-items: center; }
         .nav-links a.link-text { font-size: 14px; font-weight: 600; text-transform: uppercase; transition: color 0.3s; }
         .nav-links a.link-text:hover { color: var(--neon-green); }
 
-        /* BOTONES CTAs */
         .btn-neon {
             background-color: var(--neon-green); color: #000; padding: 18px 36px; font-weight: 700; display: inline-block;
             text-transform: uppercase; border: none; border-radius: 4px; cursor: pointer; transition: all 0.3s ease;
@@ -67,17 +54,14 @@
         }
         .btn-neon:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(57, 255, 20, 0.6); }
 
-        /* SECCIONES */
         section { padding: 100px 0; border-bottom: 1px solid #1a1a1a; }
         
-        /* HERO SECTION */
         .hero { display: flex; align-items: center; justify-content: space-between; gap: 50px; min-height: 100vh; padding-top: 120px; }
         .hero-text { flex: 1; }
         .hero-text h1 { font-size: 58px; line-height: 1.1; margin-bottom: 25px; }
         .hero-text h1 span { color: var(--neon-green); }
         .hero-text p { font-size: 18px; color: var(--text-gray); margin-bottom: 40px; max-width: 550px; }
         
-        /* MARCO DE FOTOS */
         .photo-frame { flex: 1; position: relative; display: flex; justify-content: center; width: 100%; }
         .photo-frame img { 
             display: block; width: 100%; max-width: 500px; height: auto; max-height: 600px; object-fit: cover; 
@@ -87,10 +71,8 @@
         }
         .photo-frame img:hover { transform: scale(1.02); }
 
-        /* GRID SYSTEM */
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         
-        /* GALERÍA DE VIDEOS */
         .video-section { text-align: center; background: #080808; padding: 80px 20px; }
         .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 40px; }
         .native-video-player {
@@ -103,7 +85,6 @@
         .native-video-player:hover { transform: translateY(-5px); border-color: var(--neon-green); }
         .native-video-player video { width: 100%; display: block; max-height: 550px; object-fit: contain; }
 
-        /* GALERÍA DE CERTIFICADOS */
         .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
         .cert-card { background: var(--bg-panel); border-radius: 8px; overflow: hidden; border: 1px solid #333; transition: transform 0.3s; }
         .cert-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(57,255,20,0.15); border-color: var(--neon-green); }
@@ -114,12 +95,10 @@
         .cert-info h4 { color: var(--neon-green); font-size: 20px; margin: 0 0 10px 0; font-family: 'Rajdhani', sans-serif; line-height: 1.2; }
         .cert-info p { color: var(--text-gray); font-size: 14px; margin: 0; line-height: 1.5; }
         
-        /* FOOTER SOCIAL ICONS */
         .footer-social { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 20px; }
         .footer-social a { color: var(--text-light); font-size: 32px; transition: all 0.3s; }
         .footer-social a:hover { color: var(--neon-green); transform: translateY(-3px); }
 
-        /* OPTIMIZACIÓN MÓVIL */
         @media (max-width: 900px) {
             .nav-content { justify-content: center; padding: 15px 0; }
             .nav-links { display: none; } 
@@ -158,7 +137,7 @@
                     <a href="https://www.instagram.com/rodolfoissa_coach?igsh=bjZ4Mm1rZWUxMDd4" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.tiktok.com/@rg.trainer?_r=1&_t=ZS-96lgbfyosC5" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
                     <a href="https://www.facebook.com/profile.php?id=61590348699813" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20iniciar%20mi%20camino%20al%20bienestar" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
             
@@ -174,7 +153,7 @@
         <div class="hero-text">
             <h1>Entrenamiento Inteligente para <span>Mentes Ocupadas</span></h1>
             <p>Ya sea en casa o en el gimnasio. Reduce el estrés, elimina la fatiga mental y logra tu mejor versión con un plan que se adapta a tu ritmo de vida, no al revés.</p>
-            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20iniciar%20mi%20camino%20al%20bienestar" target="_blank" class="btn-neon">AGENDA TU CAMINO AL BIENESTAR</a>
+            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20iniciar%20mi%20camino%20al%20bienestar" target="_blank" class="btn-neon">👉 PULSA AQUÍ: AGENDA TU CAMINO AL BIENESTAR</a>
         </div>
         <div class="photo-frame">
             <img src="foto1.jpg.jpeg" onerror="this.src='foto1.jpg'" alt="Coach Rodolfo Evaluando">
@@ -295,19 +274,16 @@
             <p style="color: var(--text-gray); font-size: 16px;">Descubre cómo una técnica correcta puede liberar el estrés acumulado de tu día a día.</p>
             
             <div class="video-grid">
-                
                 <div class="native-video-player">
                     <video controls controlsList="nodownload" playsinline>
                         <source src="video.mp4.mp4" onerror="this.src='video.mp4'" type="video/mp4">
                     </video>
                 </div>
-
                 <div class="native-video-player">
                     <video controls controlsList="nodownload" playsinline>
                         <source src="video2.mp4" onerror="this.src='video2.mp4.mp4'" type="video/mp4">
                     </video>
                 </div>
-
             </div>
         </div>
     </section>
@@ -318,7 +294,7 @@
             <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto 30px auto; font-size: 16px;">
                 Hablemos de tus objetivos, tu nivel de estrés actual y cómo podemos adaptar un plan a tu vida. Haz clic abajo para iniciar una charla tranquila, directa y confidencial.
             </p>
-            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20iniciar%20mi%20camino%20al%20bienestar" target="_blank" class="btn-neon">INICIAR MI CAMINO AL BIENESTAR</a>
+            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20iniciar%20mi%20camino%20al%20bienestar" target="_blank" class="btn-neon">👉 PULSA AQUÍ: INICIAR MI CAMINO AL BIENESTAR</a>
         </div>
     </section>
 
@@ -332,7 +308,7 @@
             <a href="https://www.instagram.com/rodolfoissa_coach?igsh=bjZ4Mm1rZWUxMDd4" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://www.tiktok.com/@rg.trainer?_r=1&_t=ZS-96lgbfyosC5" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
             <a href="https://www.facebook.com/profile.php?id=61590348699813" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20iniciar%20mi%20camino%20al%20bienestar" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
         
         <p style="color: var(--text-gray); font-size: 13px; margin-top: 40px;">
