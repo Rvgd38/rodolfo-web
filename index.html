@@ -47,10 +47,15 @@
         .nav-links a.link-text { font-size: 14px; font-weight: 600; text-transform: uppercase; transition: color 0.3s; }
         .nav-links a.link-text:hover { color: var(--neon-green); }
 
+        /* NUEVO ESTILO PARA EL BOTÓN EN DOS LÍNEAS */
         .btn-neon {
-            background-color: var(--neon-green); color: #000; padding: 18px 36px; font-weight: 700; display: inline-block;
+            background-color: var(--neon-green); color: #000; padding: 16px 36px; font-weight: 700; display: inline-block;
             text-transform: uppercase; border: none; border-radius: 4px; cursor: pointer; transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(57, 255, 20, 0.3); font-family: 'Inter', sans-serif; letter-spacing: 1px; font-size: 15px;
+            box-shadow: 0 4px 15px rgba(57, 255, 20, 0.3); font-family: 'Inter', sans-serif; letter-spacing: 1px; font-size: 16px;
+            text-align: center; line-height: 1.4;
+        }
+        .btn-neon small {
+            display: block; font-size: 13px; font-weight: 800; margin-top: 4px; opacity: 0.9; letter-spacing: 2px;
         }
         .btn-neon:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(57, 255, 20, 0.6); }
 
@@ -153,7 +158,11 @@
         <div class="hero-text">
             <h1>Entrenamiento Inteligente para <span>Mentes Ocupadas</span></h1>
             <p>Ya sea en casa o en el gimnasio. Reduce el estrés, elimina la fatiga mental y logra tu mejor versión con un plan que se adapta a tu ritmo de vida, no al revés.</p>
-            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20iniciar%20mi%20camino%20al%20bienestar" target="_blank" class="btn-neon">👉 PULSA AQUÍ: AGENDA TU CAMINO AL BIENESTAR</a>
+            <!-- BOTÓN EN DOS LÍNEAS AQUÍ -->
+            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20iniciar%20mi%20camino%20al%20bienestar" target="_blank" class="btn-neon">
+                AGENDA TU CAMINO AL BIENESTAR<br>
+                <small>HAZ CLIC AQUÍ</small>
+            </a>
         </div>
         <div class="photo-frame">
             <img src="foto1.jpg.jpeg" onerror="this.src='foto1.jpg'" alt="Coach Rodolfo Evaluando">
@@ -294,7 +303,11 @@
             <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto 30px auto; font-size: 16px;">
                 Hablemos de tus objetivos, tu nivel de estrés actual y cómo podemos adaptar un plan a tu vida. Haz clic abajo para iniciar una charla tranquila, directa y confidencial.
             </p>
-            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20iniciar%20mi%20camino%20al%20bienestar" target="_blank" class="btn-neon">👉 PULSA AQUÍ: INICIAR MI CAMINO AL BIENESTAR</a>
+            <!-- BOTÓN EN DOS LÍNEAS AQUÍ -->
+            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20iniciar%20mi%20camino%20al%20bienestar" target="_blank" class="btn-neon">
+                AGENDA TU CAMINO AL BIENESTAR<br>
+                <small>HAZ CLIC AQUÍ</small>
+            </a>
         </div>
     </section>
 
