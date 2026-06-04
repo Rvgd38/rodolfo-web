@@ -3,20 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rodolfo González | Coach y Especialista en Bienestar</title>
     
-    <!-- Meta tags SEO -->
+    <title>Rodolfo González | Coach y Especialista en Bienestar</title>
     <meta name="description" content="Entrenamiento inteligente para mentes ocupadas. Reduce el estrés y logra tu mejor versión física.">
     <meta property="og:title" content="Coach Rodolfo González | Especialista en Bienestar">
-    <meta property="og:image" content="https://rodolfogonzalez.vercel.app/logo.png">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+    <meta property="og:description" content="Reduce la fatiga mental y transforma tu físico. Inicia tu camino al bienestar hoy.">
+    <meta property="og:image" itemprop="image" content="https://rodolfogonzalez.vercel.app/logo.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="400">
+    <meta property="og:url" content="https://rodolfogonzalez.vercel.app/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
-        :root { --bg-dark: #000000; --neon-green: #39FF14; --text-light: #FFFFFF; }
+        :root { --bg-dark: #000000; --bg-panel: #111111; --neon-green: #39FF14; --text-light: #E0E0E0; --text-gray: #888888; }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { margin: 0; background-color: var(--bg-dark); color: var(--text-light); font-family: 'Inter', sans-serif; line-height: 1.6; overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Rajdhani', sans-serif; color: #FFFFFF; text-transform: uppercase; letter-spacing: 1px; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        header { background: rgba(0, 0, 0, 0.95); border-bottom: 1px solid #222; position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; height: 80px; }
         
-        /* BOTÓN DE ALTO IMPACTO */
+        .brand-group { display: flex; align-items: center; gap: 12px; }
+        .logo-img img { height: 45px; width: auto; border-radius: 10px; display: block; border: 1px solid #333; transition: 0.3s; }
+        .logo-img img:hover { box-shadow: 0 0 15px rgba(57, 255, 20, 0.4); border-color: var(--neon-green); }
+        .brand-text { font-family: 'Rajdhani', sans-serif; font-size: 24px; font-weight: 700; color: #FFF; letter-spacing: 1px; }
+        .brand-text span { color: var(--neon-green); }
+        
+        .header-socials { display: flex; gap: 12px; border-left: 1px solid #333; padding-left: 12px; margin-left: 5px; }
+        .header-socials a { color: var(--text-light); font-size: 16px; transition: 0.3s; }
+        .header-socials a:hover { color: var(--neon-green); transform: translateY(-2px); }
+
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a.link-text { font-size: 14px; font-weight: 600; text-transform: uppercase; transition: color 0.3s; }
+        .nav-links a.link-text:hover { color: var(--neon-green); }
+
+        /* NUEVO BOTÓN DE ALTO IMPACTO APLICADO A TODA LA PÁGINA */
         .btn-neon {
             background: linear-gradient(90deg, var(--neon-green), #25a80e);
             color: #000000;
@@ -31,28 +62,83 @@
             transition: all 0.4s ease;
             box-shadow: 0 10px 20px rgba(57, 255, 20, 0.2);
             letter-spacing: 1.5px;
+            text-align: center;
         }
         .btn-neon:hover {
             transform: scale(1.05);
             box-shadow: 0 15px 30px rgba(57, 255, 20, 0.4);
         }
 
-        /* AJUSTES ADICIONALES DE TEXTO */
-        .hero-text h1 { font-size: 58px; font-weight: 700; margin-bottom: 20px; }
-        .hero-text p { font-size: 20px; color: #bbbbbb; margin-bottom: 40px; }
+        section { padding: 100px 0; border-bottom: 1px solid #1a1a1a; }
         
-        /* Estilos generales mantenidos de la versión anterior para coherencia */
-        body { margin: 0; background-color: var(--bg-dark); color: var(--text-light); font-family: 'Inter', sans-serif; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        header { background: rgba(0,0,0,0.95); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid #222; padding: 15px 0; }
-        .nav-content { display: flex; justify-content: space-between; align-items: center; }
-        .brand-text { font-family: 'Rajdhani', sans-serif; font-size: 24px; font-weight: 700; color: #FFF; }
-        .brand-text span { color: var(--neon-green); }
-        .photo-frame img { width: 100%; border-radius: 12px; border: 1px solid #333; }
+        .hero { display: flex; align-items: center; justify-content: space-between; gap: 50px; min-height: 100vh; padding-top: 120px; }
+        .hero-text { flex: 1; }
+        .hero-text h1 { font-size: 58px; line-height: 1.1; margin-bottom: 25px; }
+        .hero-text h1 span { color: var(--neon-green); }
+        .hero-text p { font-size: 18px; color: var(--text-gray); margin-bottom: 40px; max-width: 550px; }
         
+        .photo-frame { flex: 1; position: relative; display: flex; justify-content: center; width: 100%; }
+        .photo-frame img { 
+            display: block; width: 100%; max-width: 500px; height: auto; max-height: 600px; object-fit: cover; 
+            border-radius: 12px; border: 1px solid rgba(57, 255, 20, 0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8), 0 0 20px rgba(57, 255, 20, 0.1);
+            transition: transform 0.5s ease;
+        }
+        .photo-frame img:hover { transform: scale(1.02); }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        
+        .video-section { text-align: center; background: #080808; padding: 80px 20px; }
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 40px; }
+        .native-video-player {
+            width: 100%; margin: 0 auto;
+            border-radius: 12px; overflow: hidden;
+            border: 2px solid #222; box-shadow: 0 10px 30px rgba(0,0,0,0.9);
+            transition: transform 0.3s, border-color 0.3s;
+            background-color: #000;
+        }
+        .native-video-player:hover { transform: translateY(-5px); border-color: var(--neon-green); }
+        .native-video-player video { width: 100%; display: block; max-height: 550px; object-fit: contain; }
+
+        .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
+        .cert-card { background: var(--bg-panel); border-radius: 8px; overflow: hidden; border: 1px solid #333; transition: transform 0.3s; }
+        .cert-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(57,255,20,0.15); border-color: var(--neon-green); }
+        .cert-img-container { width: 100%; height: 220px; background: #050505; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid #333; padding: 15px;}
+        .cert-img-container img { max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(15%); transition: filter 0.3s; }
+        .cert-card:hover .cert-img-container img { filter: grayscale(0%); }
+        .cert-info { padding: 25px; }
+        .cert-info h4 { color: var(--neon-green); font-size: 20px; margin: 0 0 10px 0; font-family: 'Rajdhani', sans-serif; line-height: 1.2; }
+        .cert-info p { color: var(--text-gray); font-size: 14px; margin: 0; line-height: 1.5; }
+        
+        .footer-social { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 20px; }
+        .footer-social a { color: var(--text-light); font-size: 32px; transition: all 0.3s; }
+        .footer-social a:hover { color: var(--neon-green); transform: translateY(-3px); }
+
         @media (max-width: 900px) {
-            .btn-neon { width: 100%; font-size: 16px; padding: 20px; }
-            .hero-text h1 { font-size: 40px; }
+            .nav-content { justify-content: center; padding: 15px 0; }
+            .nav-links { display: none; } 
+            .brand-group { gap: 8px; flex-wrap: wrap; justify-content: center; }
+            .brand-text { font-size: 20px; }
+            .logo-img img { height: 40px; }
+            .header-socials { border-left: none; padding-left: 5px; gap: 15px; margin-left: 0; }
+            section { padding: 60px 0; }
+            
+            /* ORDENAMIENTO EN CELULARES */
+            .hero { display: flex; flex-direction: column; text-align: center; padding-top: 130px; gap: 30px; }
+            .hero .photo-frame { order: -1; margin-bottom: 15px; } 
+            .hero .hero-text { order: 1; } 
+            
+            .grid-2 { display: flex; flex-direction: column; gap: 40px; text-align: center; }
+            .grid-2 .photo-frame { order: -1; margin-bottom: 15px; } 
+            .grid-2 .text-box { order: 1; } 
+
+            .hero-text h1 { font-size: 38px; margin-bottom: 15px; }
+            .hero-text p { font-size: 16px; margin: 0 auto 30px auto; }
+            .btn-neon { width: 100%; padding: 20px; font-size: 16px; }
+            .text-box { text-align: center !important; }
+            .text-box h2 { font-size: 32px !important; }
+            .text-box ul { text-align: left; display: inline-block; }
+            .photo-frame img { max-height: 400px; }
         }
     </style>
 </head>
@@ -60,23 +146,194 @@
 
     <header>
         <div class="container nav-content">
-            <div class="brand-group" style="display:flex; align-items:center; gap:10px;">
-                <img src="logo.png" style="height:40px; border-radius:8px;">
+            <div class="brand-group">
+                <a href="#" class="logo-img">
+                    <img src="logo.png" onerror="this.src='logo.jpg'" alt="RG Coaching Logo">
+                </a>
                 <div class="brand-text">RG<span>coach</span></div>
+                
+                <div class="header-socials">
+                    <a href="https://www.instagram.com/rodolfoissa_coach?igsh=bjZ4Mm1rZWUxMDd4" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@rg.trainer?_r=1&_t=ZS-96lgbfyosC5" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61590348699813" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
             </div>
+            
+            <nav class="nav-links">
+                <a href="#metodo" class="link-text">La Solución</a>
+                <a href="#coach" class="link-text">Tu Coach</a>
+                <a href="#certificaciones" class="link-text">Respaldo</a>
+            </nav>
         </div>
     </header>
 
-    <section class="hero container" style="display:flex; align-items:center; min-height:100vh; gap:50px;">
+    <section class="hero container">
         <div class="hero-text">
             <h1>Entrenamiento Inteligente para <span>Mentes Ocupadas</span></h1>
-            <p>Logra tu mejor versión con un plan que se adapta a tu ritmo de vida, diseñado para maximizar energía y reducir el estrés.</p>
-            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20iniciar%20mi%20camino%20al%20bienestar" class="btn-neon">Agenda tu camino al bienestar</a>
+            <p>Ya sea en casa o en el gimnasio. Reduce el estrés, elimina la fatiga mental y logra tu mejor versión con un plan que se adapta a tu ritmo de vida, no al revés.</p>
+            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20iniciar%20mi%20camino%20al%20bienestar" target="_blank" class="btn-neon">AGENDA TU CAMINO AL BIENESTAR</a>
         </div>
         <div class="photo-frame">
-            <img src="foto1.jpg.jpeg" onerror="this.src='foto1.jpg'" alt="Coach Rodolfo">
+            <img src="foto1.jpg.jpeg" onerror="this.src='foto1.jpg'" alt="Coach Rodolfo Evaluando">
         </div>
     </section>
+
+    <section id="metodo" class="container grid-2">
+        <div class="photo-frame">
+            <img src="foto2.jpg.jpeg" onerror="this.src='foto2.jpg'" alt="Entrenamiento sin estrés">
+        </div>
+        <div class="text-box" style="text-align: left;">
+            <h2 style="font-size: 42px; line-height: 1.1;">¿El estrés diario y la falta de tiempo te <span style="color:var(--neon-green);">frenan</span>?</h2>
+            <p style="color: var(--text-gray); font-size: 16px;">
+                La sobrecarga laboral y los altos niveles de cortisol agotan tu energía. Intentar seguir rutinas genéricas o extremadamente exigentes cuando estás mentalmente agotado solo genera frustración y riesgo de lesiones.
+            </p>
+            <p style="color: var(--text-gray); font-size: 16px;">
+                No necesitas sumar más estrés a tu día, <strong>necesitas una solución eficiente</strong>. A través de una Entrevista Motivacional privada, evaluamos tu estado actual. Luego, diseño un plan estructurado y seguro que se integra a tu vida, permitiéndote liberar tensión y ver resultados reales.
+            </p>
+        </div>
+    </section>
+
+    <section id="coach" class="container grid-2">
+        <div class="text-box" style="text-align: left;">
+            <h2 style="font-size: 38px;">Lic. Rodolfo González</h2>
+            <h3 style="color: var(--text-gray); margin-top: -15px; font-size: 15px; letter-spacing: 2px;">TU GUÍA HACIA UN BIENESTAR INTEGRAL</h3>
+            <ul style="color: var(--text-gray); padding-left: 20px; font-size: 16px; margin-top: 30px; line-height: 2;">
+                <li><strong>Licenciatura en Educación:</strong> Te enseño a entrenar desde la empatía. Entenderás el <em>porqué</em> de cada paso sin tecnicismos complicados.</li>
+                <li><strong>Con más de 18 años de experiencia:</strong> Ayudando a profesionales ocupados a transformar su físico, recuperar su vitalidad y aliviar dolores.</li>
+                <li><strong>Ciencia a tu favor:</strong> Aplico la biomecánica en el diseño de tu plan de fondo, para que tú solo te enfoques en disfrutar un entrenamiento seguro.</li>
+            </ul>
+        </div>
+        <div class="photo-frame">
+            <img src="foto4.jpeg" onerror="this.src='foto4.jpg'; this.onerror=function(){this.src='foto4.jpg.jpeg'};" alt="Coach Rodolfo Liderazgo">
+        </div>
+    </section>
+
+    <section id="certificaciones" class="container">
+        <h2 style="text-align: center; font-size: 38px; margin-bottom: 20px;">Tu Tranquilidad es mi Prioridad</h2>
+        <p style="text-align: center; color: var(--text-gray); font-size: 16px; max-width: 700px; margin: 0 auto;">Mi metodología está respaldada por una sólida formación académica y certificaciones internacionales para garantizar tu seguridad en cada movimiento.</p>
+        
+        <div class="cert-grid">
+            <div class="cert-card" style="border-color: var(--neon-green); box-shadow: 0 0 15px rgba(57,255,20,0.1);">
+                <div class="cert-img-container">
+                    <img src="cert_uni.jpeg" alt="Título Universitario Licenciatura en Educación">
+                </div>
+                <div class="cert-info">
+                    <h4>Licenciatura en Educación</h4>
+                    <p>Formación universitaria con base pedagógica y didáctica. El fundamento absoluto para enseñar, instruir y transformar con paciencia.</p>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-img-container">
+                    <img src="cert1.jpg" alt="ISSA Personal Trainer">
+                </div>
+                <div class="cert-info">
+                    <h4>ISSA Certified Personal Trainer</h4>
+                    <p>Entrenamientos basados en metodologías globales actualizadas para resultados reales y sostenibles.</p>
+                </div>
+            </div>
+            
+            <div class="cert-card">
+                <div class="cert-img-container">
+                    <img src="cert2.jpg" alt="ISSA Nutrition Coach">
+                </div>
+                <div class="cert-info">
+                    <h4>ISSA Nutrition Coach</h4>
+                    <p>Orientación nutricional práctica y flexible. Nutrimos tu cuerpo sin dietas restrictivas que generen ansiedad.</p>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-img-container">
+                    <img src="cert3.png" alt="CYBEX Biomechanics">
+                </div>
+                <div class="cert-info">
+                    <h4>Especialista Biomecánico (CYBEX)</h4>
+                    <p>Análisis de la mecánica humana para asegurar que cada ejercicio alivie tensiones y proteja tus articulaciones.</p>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-img-container">
+                    <img src="cert4.jpg" alt="IUNAV IA">
+                </div>
+                <div class="cert-info">
+                    <h4>Innovación Digital con IA (IUNAV)</h4>
+                    <p>Uso de Inteligencia Artificial como asistente privado para optimizar y entregar tus rutinas en tiempo récord.</p>
+                </div>
+            </div>
+            
+            <div class="cert-card">
+                <div class="cert-img-container">
+                    <img src="cert5.png" alt="Patologías LUZ">
+                </div>
+                <div class="cert-info">
+                    <h4>Prescripción para Patologías (LUZ)</h4>
+                    <p>Diseño de planes seguros para personas con condiciones médicas específicas, garantizando salud integral.</p>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-img-container">
+                    <img src="cert6.png" alt="Coach de Salud LIGHT">
+                </div>
+                <div class="cert-info">
+                    <h4>Coach de Salud (Fundación LIGHT)</h4>
+                    <p>Formación acreditada para promover hábitos de vida saludables y prevención de enfermedades desde un enfoque holístico.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA DINÁMICA DE VIDEOS -->
+    <section id="videos" class="video-section">
+        <div class="container">
+            <h2 style="font-size: 38px;">Aprende a Moverte Bien</h2>
+            <p style="color: var(--text-gray); font-size: 16px;">Descubre cómo una técnica correcta puede liberar el estrés acumulado de tu día a día.</p>
+            
+            <div class="video-grid">
+                <div class="native-video-player">
+                    <video controls controlsList="nodownload" playsinline>
+                        <source src="video.mp4.mp4" onerror="this.src='video.mp4'" type="video/mp4">
+                    </video>
+                </div>
+                <div class="native-video-player">
+                    <video controls controlsList="nodownload" playsinline>
+                        <source src="video2.mp4" onerror="this.src='video2.mp4.mp4'" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="text-align: center; border-bottom: none; padding-bottom: 60px; padding-top: 60px;">
+        <div class="container">
+            <h2 style="font-size: 40px; margin-bottom: 10px;">Da el Primer Paso sin Compromisos</h2>
+            <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto 30px auto; font-size: 16px;">
+                Hablemos de tus objetivos, tu nivel de estrés actual y cómo podemos adaptar un plan a tu vida. Haz clic abajo para iniciar una charla tranquila, directa y confidencial.
+            </p>
+            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20iniciar%20mi%20camino%20al%20bienestar" target="_blank" class="btn-neon">INICIAR MI CAMINO AL BIENESTAR</a>
+        </div>
+    </section>
+
+    <footer style="background: var(--bg-panel); padding: 50px 20px 30px 20px; text-align: center; border-top: 1px solid #222;">
+        <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+            <img src="logo.png" onerror="this.src='logo.jpg'" alt="RG Logo" style="height: 60px; border-radius: 12px; border: 1px solid #333;">
+        </div>
+        <p style="color: var(--text-gray); font-size: 16px; letter-spacing: 1px;">Conectemos a través de mis plataformas:</p>
+        
+        <div class="footer-social">
+            <a href="https://www.instagram.com/rodolfoissa_coach?igsh=bjZ4Mm1rZWUxMDd4" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@rg.trainer?_r=1&_t=ZS-96lgbfyosC5" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61590348699813" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        
+        <p style="color: var(--text-gray); font-size: 13px; margin-top: 40px;">
+            &copy; 2024 Rodolfo González - Especialista en Bienestar e ISSA Certified Trainer.<br>Todos los derechos reservados.
+        </p>
+    </footer>
 
 </body>
 </html>
