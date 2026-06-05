@@ -46,7 +46,8 @@
         .nav-links { display: flex; gap: 25px; align-items: center; }
         .nav-links a.link-text { font-size: 14px; font-weight: 600; text-transform: uppercase; transition: color 0.3s; }
         .nav-links a.link-text:hover { color: var(--neon-green); }
-
+        
+        /* BOTÓN DE ALTO IMPACTO MEJORADO */
         .btn-neon {
             background: linear-gradient(90deg, var(--neon-green), #25a80e);
             color: #000000;
@@ -62,6 +63,11 @@
             box-shadow: 0 10px 20px rgba(57, 255, 20, 0.2);
             letter-spacing: 1.5px;
             text-align: center;
+            line-height: 1.4;
+            display: inline-block;
+        }
+        .btn-neon small {
+            display: block; font-size: 13px; font-weight: 800; margin-top: 4px; opacity: 0.9; letter-spacing: 2px;
         }
         .btn-neon:hover {
             transform: scale(1.05);
@@ -159,6 +165,8 @@
                 <a href="#metodo" class="link-text">La Solución</a>
                 <a href="#coach" class="link-text">Tu Coach</a>
                 <a href="#certificaciones" class="link-text">Respaldo</a>
+                <!-- NUEVO ENLACE AL MENÚ -->
+                <a href="#academia" class="link-text" style="color: var(--neon-green);">Academia ISSA</a>
             </nav>
         </div>
     </header>
@@ -167,7 +175,10 @@
         <div class="hero-text">
             <h1>Entrenamiento Inteligente para <span>Mentes Ocupadas</span></h1>
             <p>Ya sea en casa o en el gimnasio. Reduce el estrés, elimina la fatiga mental y logra tu mejor versión con un plan que se adapta a tu ritmo de vida, no al revés.</p>
-            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20iniciar%20mi%20camino%20al%20bienestar" target="_blank" class="btn-neon">AGENDA TU CAMINO AL BIENESTAR</a>
+            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20iniciar%20mi%20camino%20al%20bienestar" target="_blank" class="btn-neon">
+                AGENDA TU CAMINO AL BIENESTAR<br>
+                <small>👉 PULSA AQUÍ</small>
+            </a>
         </div>
         <div class="photo-frame">
             <img src="foto1.jpg.jpeg" onerror="this.src='foto1.jpg'" alt="Coach Rodolfo Evaluando">
@@ -281,7 +292,20 @@
         </div>
     </section>
 
-    <!-- GALERÍA DINÁMICA DE VIDEOS -->
+    <!-- NUEVA SECCIÓN DE AFILIADOS ISSA (INGRESOS PASIVOS) -->
+    <section id="academia" style="background: linear-gradient(rgba(17,17,17,0.9), rgba(17,17,17,0.95)), url('foto1.jpg.jpeg') center/cover; padding: 120px 20px; border-bottom: 1px solid var(--neon-green);">
+        <div class="container" style="text-align: center; background: rgba(0,0,0,0.8); border: 1px solid #333; border-radius: 12px; padding: 60px 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.8); max-width: 900px;">
+            <h2 style="font-size: 42px; margin-bottom: 20px;">Fórmate con los Mejores: <span style="color: var(--neon-green);">Academia ISSA</span></h2>
+            <p style="color: var(--text-gray); font-size: 18px; margin: 0 auto 40px auto;">
+                Si te apasiona el fitness y quieres convertirlo en una carrera internacional rentable, necesitas el respaldo de los líderes del mercado. Como entrenador certificado oficial, te invito a dar el paso con la <strong>International Sports Sciences Association (ISSA)</strong>. <br><br>Obtén las certificaciones que yo obtuve y construye un negocio sólido a nivel global.
+            </p>
+            <a href="https://issa.sjv.io/k4Zqrn" target="_blank" class="btn-neon">
+                EXPLORA LOS CURSOS DE ISSA<br>
+                <small>👉 IR A LA PLATAFORMA OFICIAL</small>
+            </a>
+        </div>
+    </section>
+
     <section id="videos" class="video-section">
         <div class="container">
             <h2 style="font-size: 38px;">Aprende a Moverte Bien</h2>
@@ -308,7 +332,10 @@
             <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto 30px auto; font-size: 16px;">
                 Hablemos de tus objetivos, tu nivel de estrés actual y cómo podemos adaptar un plan a tu vida. Haz clic abajo para iniciar una charla tranquila, directa y confidencial.
             </p>
-            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20iniciar%20mi%20camino%20al%20bienestar" target="_blank" class="btn-neon">INICIAR MI CAMINO AL BIENESTAR</a>
+            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20iniciar%20mi%20camino%20al%20bienestar" target="_blank" class="btn-neon">
+                INICIAR MI CAMINO AL BIENESTAR<br>
+                <small>👉 PULSA AQUÍ</small>
+            </a>
         </div>
     </section>
 
