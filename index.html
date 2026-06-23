@@ -18,29 +18,32 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
+    <!-- RADAR DE ANALÍTICAS (VERCEL WEB ANALYTICS) -->
     <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
 
     <style>
-        :root { --bg-dark: #000000; --bg-panel: #111111; --neon-green: #39FF14; --text-light: #E0E0E0; --text-gray: #888888; }
-        * { box-sizing: border-box; }
+        :root { --bg-dark: #000000; --neon-green: #39FF14; --text-light: #FFFFFF; --text-gray: #bbbbbb;}
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
         html { scroll-behavior: smooth; }
-        body { margin: 0; background-color: var(--bg-dark); color: var(--text-light); font-family: 'Inter', sans-serif; line-height: 1.6; overflow-x: hidden; }
-        h1, h2, h3 { font-family: 'Rajdhani', sans-serif; color: #FFFFFF; text-transform: uppercase; letter-spacing: 1px; }
+        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Rajdhani', sans-serif; color: #FFFFFF; text-transform: uppercase; letter-spacing: 1px; }
         a { text-decoration: none; color: inherit; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        header { background: rgba(0, 0, 0, 0.95); border-bottom: 1px solid #222; position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
-        .nav-content { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        /* HEADER */
+        header { background: rgba(0, 0, 0, 0.95); border-bottom: 1px solid #222; position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(10px); padding: 15px 0;}
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
         
-        .brand-group { display: flex; align-items: center; gap: 12px; }
-        .logo-img img { height: 45px; width: auto; border-radius: 10px; display: block; border: 1px solid #333; transition: 0.3s; }
-        .logo-img img:hover { box-shadow: 0 0 15px rgba(57, 255, 20, 0.4); border-color: var(--neon-green); }
+        .brand-group { display: flex; align-items: center; gap: 10px; }
+        .logo-img { height: 45px; width: auto; border-radius: 8px; display: block; border: 1px solid #333; transition: 0.3s; }
+        .logo-img:hover { box-shadow: 0 0 15px rgba(57, 255, 20, 0.4); border-color: var(--neon-green); }
         .brand-text { font-family: 'Rajdhani', sans-serif; font-size: 24px; font-weight: 700; color: #FFF; letter-spacing: 1px; }
         .brand-text span { color: var(--neon-green); }
         
@@ -52,6 +55,7 @@
         .nav-links a.link-text { font-size: 14px; font-weight: 600; text-transform: uppercase; transition: color 0.3s; }
         .nav-links a.link-text:hover { color: var(--neon-green); }
 
+        /* BOTÓN DE ALTO IMPACTO (MEJORADO) */
         .btn-neon {
             background: linear-gradient(90deg, var(--neon-green), #25a80e);
             color: #000000;
@@ -67,24 +71,18 @@
             box-shadow: 0 10px 20px rgba(57, 255, 20, 0.2);
             letter-spacing: 1.5px;
             text-align: center;
-            line-height: 1.4;
             display: inline-block;
         }
-        .btn-neon small {
-            display: block; font-size: 13px; font-weight: 800; margin-top: 4px; opacity: 0.9; letter-spacing: 2px;
-        }
-        .btn-neon:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 30px rgba(57, 255, 20, 0.4);
-        }
+        .btn-neon:hover { transform: scale(1.05); box-shadow: 0 15px 30px rgba(57, 255, 20, 0.4); }
 
         section { padding: 100px 0; border-bottom: 1px solid #1a1a1a; }
         
+        /* HERO SECTION */
         .hero { display: flex; align-items: center; justify-content: space-between; gap: 50px; min-height: 100vh; padding-top: 120px; }
         .hero-text { flex: 1; }
-        .hero-text h1 { font-size: 58px; line-height: 1.1; margin-bottom: 25px; }
+        .hero-text h1 { font-size: 58px; line-height: 1.1; margin-bottom: 25px; font-weight: 700;}
         .hero-text h1 span { color: var(--neon-green); }
-        .hero-text p { font-size: 18px; color: var(--text-gray); margin-bottom: 40px; max-width: 550px; }
+        .hero-text p { font-size: 20px; color: var(--text-gray); margin-bottom: 40px; max-width: 550px; }
         
         .photo-frame { flex: 1; position: relative; display: flex; justify-content: center; width: 100%; }
         .photo-frame img { 
@@ -97,49 +95,50 @@
 
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         
+        /* VIDEOS */
         .video-section { text-align: center; background: #080808; padding: 80px 20px; }
         .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 40px; }
-        .native-video-player {
-            width: 100%; margin: 0 auto;
-            border-radius: 12px; overflow: hidden;
-            border: 2px solid #222; box-shadow: 0 10px 30px rgba(0,0,0,0.9);
-            transition: transform 0.3s, border-color 0.3s;
-            background-color: #000;
-        }
+        .native-video-player { width: 100%; margin: 0 auto; border-radius: 12px; overflow: hidden; border: 2px solid #222; box-shadow: 0 10px 30px rgba(0,0,0,0.9); transition: transform 0.3s, border-color 0.3s; background-color: #000; }
         .native-video-player:hover { transform: translateY(-5px); border-color: var(--neon-green); }
         .native-video-player video { width: 100%; display: block; max-height: 550px; object-fit: contain; }
 
+        /* GALERÍA DE CERTIFICADOS */
         .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
-        .cert-card { background: var(--bg-panel); border-radius: 8px; overflow: hidden; border: 1px solid #333; transition: transform 0.3s; }
+        .cert-card { background: #111; border-radius: 8px; overflow: hidden; border: 1px solid #333; transition: transform 0.3s; }
         .cert-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(57,255,20,0.15); border-color: var(--neon-green); }
         .cert-img-container { width: 100%; height: 220px; background: #050505; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid #333; padding: 15px;}
         .cert-img-container img { max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(15%); transition: filter 0.3s; }
         .cert-card:hover .cert-img-container img { filter: grayscale(0%); }
         .cert-info { padding: 25px; }
         .cert-info h4 { color: var(--neon-green); font-size: 20px; margin: 0 0 10px 0; font-family: 'Rajdhani', sans-serif; line-height: 1.2; }
-        .cert-info p { color: var(--text-gray); font-size: 14px; margin: 0; line-height: 1.5; }
+        .cert-info p { color: var(--text-gray); font-size: 14px; margin: 0; line-height: 1.5; font-family: 'Inter', sans-serif; }
         
+        /* FOOTER SOCIAL ICONS */
         .footer-social { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 20px; }
         .footer-social a { color: var(--text-light); font-size: 32px; transition: all 0.3s; }
         .footer-social a:hover { color: var(--neon-green); transform: translateY(-3px); }
 
         @media (max-width: 900px) {
-            .nav-content { justify-content: center; padding: 15px 0; }
+            .nav-content { justify-content: center; padding: 10px 0; }
             .nav-links { display: none; } 
             .brand-group { gap: 8px; flex-wrap: wrap; justify-content: center; }
             .brand-text { font-size: 20px; }
-            .logo-img img { height: 40px; }
+            .logo-img { height: 40px; }
             .header-socials { border-left: none; padding-left: 5px; gap: 15px; margin-left: 0; }
+            
             section { padding: 60px 0; }
-            .hero { display: flex; flex-direction: column; text-align: center; padding-top: 130px; padding-bottom: 50px; gap: 30px; }
+            .hero { display: flex; flex-direction: column; text-align: center; padding-top: 130px; gap: 30px; }
             .hero .photo-frame { order: -1; margin-bottom: 15px; } 
             .hero .hero-text { order: 1; } 
+            
             .grid-2 { display: flex; flex-direction: column; gap: 40px; text-align: center; }
             .grid-2 .photo-frame { order: -1; margin-bottom: 15px; } 
             .grid-2 .text-box { order: 1; } 
-            .hero-text h1 { font-size: 38px; margin-bottom: 15px; }
+
+            .hero-text h1 { font-size: 40px; margin-bottom: 15px; }
             .hero-text p { font-size: 16px; margin: 0 auto 30px auto; }
-            .btn-neon { width: 100%; padding: 20px; font-size: 16px; margin-bottom: 20px; display: block; }
+            .btn-neon { width: 100%; padding: 20px; font-size: 16px; margin-bottom: 40px; display: block; }
+            
             .text-box { text-align: center !important; }
             .text-box h2 { font-size: 32px !important; }
             .text-box ul { text-align: left; display: inline-block; }
@@ -152,8 +151,8 @@
     <header>
         <div class="container nav-content">
             <div class="brand-group">
-                <a href="#" class="logo-img">
-                    <img src="logo.png" onerror="this.src='logo.jpg'" alt="RG Coaching Logo">
+                <a href="#">
+                    <img src="logo.png" onerror="this.src='logo.jpg'" alt="RG Logo" class="logo-img">
                 </a>
                 <div class="brand-text">RG<span>coach</span></div>
                 
@@ -178,20 +177,17 @@
     <section class="hero container">
         <div class="hero-text">
             <h1>Entrenamiento Inteligente para <span>Mentes Ocupadas</span></h1>
-            <p>Ya sea en casa o en el gimnasio. Reduce el estrés, elimina la fatiga mental y logra tu mejor versión con un plan que se adapta a tu ritmo de vida, no al revés.</p>
-            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20iniciar%20mi%20camino%20al%20bienestar" target="_blank" class="btn-neon">
-                AGENDA TU CAMINO AL BIENESTAR<br>
-                <small>👉 PULSA AQUÍ</small>
-            </a>
+            <p>Logra tu mejor versión con un plan que se adapta a tu ritmo de vida, diseñado para maximizar energía y reducir el estrés.</p>
+            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20iniciar%20mi%20camino%20al%20bienestar" target="_blank" class="btn-neon">AGENDA TU CAMINO AL BIENESTAR</a>
         </div>
         <div class="photo-frame">
-            <img src="foto1.jpg.jpeg" onerror="this.src='foto1.jpg'" alt="Coach Rodolfo Evaluando">
+            <img src="foto1.jpg.jpeg" onerror="this.src='foto1.jpg'; this.onerror=function(){this.src='foto1.jpeg'};" alt="Coach Rodolfo Evaluando">
         </div>
     </section>
 
     <section id="metodo" class="container grid-2">
         <div class="photo-frame">
-            <img src="foto2.jpg.jpeg" onerror="this.src='foto2.jpg'" alt="Entrenamiento sin estrés">
+            <img src="foto2.jpg.jpeg" onerror="this.src='foto2.jpg'; this.onerror=function(){this.src='foto2.jpeg'};" alt="Entrenamiento sin estrés">
         </div>
         <div class="text-box" style="text-align: left;">
             <h2 style="font-size: 42px; line-height: 1.1;">¿El estrés diario y la falta de tiempo te <span style="color:var(--neon-green);">frenan</span>?</h2>
@@ -225,37 +221,100 @@
         
         <div class="cert-grid">
             <div class="cert-card" style="border-color: var(--neon-green); box-shadow: 0 0 15px rgba(57,255,20,0.1);">
-                <div class="cert-img-container"><img src="cert_uni.jpeg" alt="Título Universitario Licenciatura en Educación"></div>
-                <div class="cert-info"><h4>Licenciatura en Educación</h4><p>Formación universitaria con base pedagógica y didáctica. El fundamento absoluto para enseñar, instruir y transformar con paciencia.</p></div>
+                <div class="cert-img-container">
+                    <img src="cert_uni.jpeg" onerror="this.src='cert_uni.jpg'; this.onerror=function(){this.src='cert_uni.png'};" alt="Título Universitario Licenciatura en Educación">
+                </div>
+                <div class="cert-info">
+                    <h4>Licenciatura en Educación</h4>
+                    <p>Formación universitaria con base pedagógica y didáctica. El fundamento absoluto para enseñar, instruir y transformar con paciencia.</p>
+                </div>
             </div>
+
+            <!-- NUEVO CERTIFICADO: ISSA GLOBAL SUMMIT -->
             <div class="cert-card">
-                <div class="cert-img-container"><img src="cert1.jpg" alt="ISSA Personal Trainer"></div>
-                <div class="cert-info"><h4>ISSA Certified Personal Trainer</h4><p>Entrenamientos basados en metodologías globales actualizadas para resultados reales y sostenibles.</p></div>
+                <div class="cert-img-container">
+                    <img src="cert7.jpg" onerror="this.src='cert7.jpeg'; this.onerror=function(){this.src='cert7.png'};" alt="ISSA Global Summit 2026">
+                </div>
+                <div class="cert-info">
+                    <h4>ISSA Global Summit 2026</h4>
+                    <p>Actualización profesional en la cumbre mundial de ISSA, incorporando las últimas innovaciones científicas y metodologías del fitness global.</p>
+                </div>
             </div>
+
+            <!-- NUEVO CERTIFICADO: RCP Y DEA -->
             <div class="cert-card">
-                <div class="cert-img-container"><img src="cert2.jpg" alt="ISSA Nutrition Coach"></div>
-                <div class="cert-info"><h4>ISSA Nutrition Coach</h4><p>Orientación nutricional práctica y flexible. Nutrimos tu cuerpo sin dietas restrictivas que generen ansiedad.</p></div>
+                <div class="cert-img-container">
+                    <img src="cert8.jpg" onerror="this.src='cert8.jpeg'; this.onerror=function(){this.src='cert8.png'};" alt="ISSA CPR and AED">
+                </div>
+                <div class="cert-info">
+                    <h4>Primeros Auxilios (RCP y DEA)</h4>
+                    <p>Certificación internacional en soporte vital básico. Garantía absoluta de seguridad e integridad física durante cada intervención.</p>
+                </div>
             </div>
+
             <div class="cert-card">
-                <div class="cert-img-container"><img src="cert3.png" alt="CYBEX Biomechanics"></div>
-                <div class="cert-info"><h4>Especialista Biomecánico (CYBEX)</h4><p>Análisis de la mecánica humana para asegurar que cada ejercicio alivie tensiones y proteja tus articulaciones.</p></div>
+                <div class="cert-img-container">
+                    <img src="cert1.jpg" onerror="this.src='cert1.jpeg'; this.onerror=function(){this.src='cert1.png'};" alt="ISSA Personal Trainer">
+                </div>
+                <div class="cert-info">
+                    <h4>ISSA Certified Personal Trainer</h4>
+                    <p>Entrenamientos basados en metodologías globales actualizadas para resultados reales y sostenibles.</p>
+                </div>
             </div>
+            
             <div class="cert-card">
-                <div class="cert-img-container"><img src="cert4.jpg" alt="IUNAV IA"></div>
-                <div class="cert-info"><h4>Innovación Digital con IA (IUNAV)</h4><p>Uso de Inteligencia Artificial como asistente privado para optimizar y entregar tus rutinas en tiempo récord.</p></div>
+                <div class="cert-img-container">
+                    <img src="cert2.jpg" onerror="this.src='cert2.jpeg'; this.onerror=function(){this.src='cert2.png'};" alt="ISSA Nutrition Coach">
+                </div>
+                <div class="cert-info">
+                    <h4>ISSA Nutrition Coach</h4>
+                    <p>Orientación nutricional práctica y flexible. Nutrimos tu cuerpo sin dietas restrictivas que generen ansiedad.</p>
+                </div>
             </div>
+
             <div class="cert-card">
-                <div class="cert-img-container"><img src="cert5.png" alt="Patologías LUZ"></div>
-                <div class="cert-info"><h4>Prescripción para Patologías (LUZ)</h4><p>Diseño de planes seguros para personas con condiciones médicas específicas, garantizando salud integral.</p></div>
+                <div class="cert-img-container">
+                    <img src="cert3.png" onerror="this.src='cert3.jpg'; this.onerror=function(){this.src='cert3.jpeg'};" alt="CYBEX Biomechanics">
+                </div>
+                <div class="cert-info">
+                    <h4>Especialista Biomecánico (CYBEX)</h4>
+                    <p>Análisis de la mecánica humana para asegurar que cada ejercicio alivie tensiones y proteja tus articulaciones.</p>
+                </div>
             </div>
+
             <div class="cert-card">
-                <div class="cert-img-container"><img src="cert6.png" alt="Coach de Salud LIGHT"></div>
-                <div class="cert-info"><h4>Coach de Salud (Fundación LIGHT)</h4><p>Formación acreditada para promover hábitos de vida saludables y prevención de enfermedades desde un enfoque holístico.</p></div>
+                <div class="cert-img-container">
+                    <img src="cert4.jpg" onerror="this.src='cert4.jpeg'; this.onerror=function(){this.src='cert4.png'};" alt="IUNAV IA">
+                </div>
+                <div class="cert-info">
+                    <h4>Innovación Digital con IA (IUNAV)</h4>
+                    <p>Uso de Inteligencia Artificial como asistente privado para optimizar y entregar tus rutinas en tiempo récord.</p>
+                </div>
+            </div>
+            
+            <div class="cert-card">
+                <div class="cert-img-container">
+                    <img src="cert5.png" onerror="this.src='cert5.jpg'; this.onerror=function(){this.src='cert5.jpeg'};" alt="Patologías LUZ">
+                </div>
+                <div class="cert-info">
+                    <h4>Prescripción para Patologías (LUZ)</h4>
+                    <p>Diseño de planes seguros para personas con condiciones médicas específicas, garantizando salud integral.</p>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-img-container">
+                    <img src="cert6.png" onerror="this.src='cert6.jpg'; this.onerror=function(){this.src='cert6.jpeg'};" alt="Coach de Salud LIGHT">
+                </div>
+                <div class="cert-info">
+                    <h4>Coach de Salud (Fundación LIGHT)</h4>
+                    <p>Formación acreditada para promover hábitos de vida saludables y prevención de enfermedades desde un enfoque holístico.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN ACADEMIA ISSA (CON ENLACE EN ESPAÑOL) -->
+    <!-- SECCIÓN ACADEMIA ISSA -->
     <section id="academia" style="background: #050505; border-bottom: 1px solid var(--neon-green);">
         <div class="container grid-2" style="padding-top: 40px; padding-bottom: 40px;">
             <div class="text-box" style="text-align: left;">
@@ -266,10 +325,7 @@
                 <p style="color: var(--text-gray); font-size: 16px; margin-bottom: 30px;">
                     Obtén las certificaciones que yo obtuve estudiando 100% online y en español. Construye tu propio negocio a nivel global.
                 </p>
-                <a href="https://issa.sjv.io/9VyzPy" target="_blank" class="btn-neon" style="margin-top: 15px;">
-                    EXPLORA LOS CURSOS EN ESPAÑOL<br>
-                    <small>👉 IR A LA PLATAFORMA OFICIAL</small>
-                </a>
+                <a href="https://issa.sjv.io/9VyzPy" target="_blank" class="btn-neon" style="margin-top: 15px;">EXPLORA LOS CURSOS EN ESPAÑOL</a>
             </div>
             <div class="photo-frame">
                 <img src="foto_issa.jpg.jpeg" onerror="this.src='foto_issa.jpg'; this.onerror=function(){this.src='foto_issa.jpeg'};" alt="Coach Rodolfo Certificados ISSA" style="border-color: var(--neon-green); box-shadow: 0 0 25px rgba(57, 255, 20, 0.2);">
@@ -303,10 +359,7 @@
             <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto 30px auto; font-size: 16px;">
                 Hablemos de tus objetivos, tu nivel de estrés actual y cómo podemos adaptar un plan a tu vida. Haz clic abajo para iniciar una charla tranquila, directa y confidencial.
             </p>
-            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20iniciar%20mi%20camino%20al%20bienestar" target="_blank" class="btn-neon">
-                INICIAR MI CAMINO AL BIENESTAR<br>
-                <small>👉 PULSA AQUÍ</small>
-            </a>
+            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20iniciar%20mi%20camino%20al%20bienestar" target="_blank" class="btn-neon">INICIAR MI CAMINO AL BIENESTAR</a>
         </div>
     </section>
 
