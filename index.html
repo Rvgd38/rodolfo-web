@@ -21,14 +21,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- RADAR DE ANALÍTICAS (VERCEL WEB ANALYTICS) -->
-    <script>
-      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
     <script defer src="/_vercel/insights/script.js"></script>
 
     <style>
-        :root { --bg-dark: #000000; --neon-green: #39FF14; --text-light: #FFFFFF; --text-gray: #bbbbbb;}
+        :root { --bg-dark: #000000; --neon-green: #39FF14; --text-light: #FFFFFF; --text-gray: #bbbbbb; --bg-card: #111111;}
         
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
         html { scroll-behavior: smooth; }
@@ -40,39 +37,20 @@
         /* HEADER */
         header { background: rgba(0, 0, 0, 0.95); border-bottom: 1px solid #222; position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(10px); padding: 15px 0;}
         .nav-content { display: flex; justify-content: space-between; align-items: center; }
-        
         .brand-group { display: flex; align-items: center; gap: 10px; }
         .logo-img { height: 45px; width: auto; border-radius: 8px; display: block; border: 1px solid #333; transition: 0.3s; }
         .logo-img:hover { box-shadow: 0 0 15px rgba(57, 255, 20, 0.4); border-color: var(--neon-green); }
         .brand-text { font-family: 'Rajdhani', sans-serif; font-size: 24px; font-weight: 700; color: #FFF; letter-spacing: 1px; }
         .brand-text span { color: var(--neon-green); }
-        
         .header-socials { display: flex; gap: 12px; border-left: 1px solid #333; padding-left: 12px; margin-left: 5px; }
         .header-socials a { color: var(--text-light); font-size: 16px; transition: 0.3s; }
         .header-socials a:hover { color: var(--neon-green); transform: translateY(-2px); }
-
-        .nav-links { display: flex; gap: 25px; align-items: center; }
-        .nav-links a.link-text { font-size: 14px; font-weight: 600; text-transform: uppercase; transition: color 0.3s; }
+        .nav-links { display: flex; gap: 20px; align-items: center; }
+        .nav-links a.link-text { font-size: 13px; font-weight: 600; text-transform: uppercase; transition: color 0.3s; }
         .nav-links a.link-text:hover { color: var(--neon-green); }
 
-        /* BOTÓN DE ALTO IMPACTO (MEJORADO) */
-        .btn-neon {
-            background: linear-gradient(90deg, var(--neon-green), #25a80e);
-            color: #000000;
-            padding: 20px 45px;
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 18px;
-            font-weight: 700;
-            text-transform: uppercase;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            box-shadow: 0 10px 20px rgba(57, 255, 20, 0.2);
-            letter-spacing: 1.5px;
-            text-align: center;
-            display: inline-block;
-        }
+        /* BOTONES GLOBALES */
+        .btn-neon { background: linear-gradient(90deg, var(--neon-green), #25a80e); color: #000000; padding: 20px 45px; font-family: 'Rajdhani', sans-serif; font-size: 18px; font-weight: 700; text-transform: uppercase; border: none; border-radius: 8px; cursor: pointer; transition: all 0.4s ease; box-shadow: 0 10px 20px rgba(57, 255, 20, 0.2); letter-spacing: 1.5px; text-align: center; display: inline-block; }
         .btn-neon:hover { transform: scale(1.05); box-shadow: 0 15px 30px rgba(57, 255, 20, 0.4); }
 
         section { padding: 100px 0; border-bottom: 1px solid #1a1a1a; }
@@ -83,24 +61,47 @@
         .hero-text h1 { font-size: 58px; line-height: 1.1; margin-bottom: 25px; font-weight: 700;}
         .hero-text h1 span { color: var(--neon-green); }
         .hero-text p { font-size: 20px; color: var(--text-gray); margin-bottom: 40px; max-width: 550px; }
-        
         .photo-frame { flex: 1; position: relative; display: flex; justify-content: center; width: 100%; }
-        .photo-frame img { 
-            display: block; width: 100%; max-width: 500px; height: auto; max-height: 600px; object-fit: cover; 
-            border-radius: 12px; border: 1px solid rgba(57, 255, 20, 0.4);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.8), 0 0 20px rgba(57, 255, 20, 0.1);
-            transition: transform 0.5s ease;
-        }
+        .photo-frame img { display: block; width: 100%; max-width: 500px; height: auto; max-height: 600px; object-fit: cover; border-radius: 12px; border: 1px solid rgba(57, 255, 20, 0.4); box-shadow: 0 20px 40px rgba(0,0,0,0.8), 0 0 20px rgba(57, 255, 20, 0.1); transition: transform 0.5s ease; }
         .photo-frame img:hover { transform: scale(1.02); }
 
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         
-        /* VIDEOS */
-        .video-section { text-align: center; background: #080808; padding: 80px 20px; }
-        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 40px; }
-        .native-video-player { width: 100%; margin: 0 auto; border-radius: 12px; overflow: hidden; border: 2px solid #222; box-shadow: 0 10px 30px rgba(0,0,0,0.9); transition: transform 0.3s, border-color 0.3s; background-color: #000; }
-        .native-video-player:hover { transform: translateY(-5px); border-color: var(--neon-green); }
-        .native-video-player video { width: 100%; display: block; max-height: 550px; object-fit: contain; }
+        /* SECCIÓN FINANCIERA (PLANES) */
+        .pricing-section { background: #050505; text-align: center; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; align-items: center;}
+        .pricing-card { background: var(--bg-card); border: 1px solid #333; border-radius: 16px; padding: 40px 30px; transition: 0.3s; position: relative; display: flex; flex-direction: column; justify-content: space-between; height: 100%;}
+        .pricing-card:hover { transform: translateY(-10px); border-color: #555; }
+        .pricing-card h3 { font-size: 28px; margin-bottom: 10px; color: #FFF; }
+        .pricing-card .price { font-family: 'Rajdhani', sans-serif; font-size: 48px; font-weight: 700; color: var(--neon-green); margin-bottom: 20px; line-height: 1;}
+        .pricing-card .price span { font-size: 16px; color: var(--text-gray); font-weight: 400; font-family: 'Inter', sans-serif; letter-spacing: 0;}
+        .pricing-card p.desc { font-size: 14px; color: var(--text-gray); margin-bottom: 30px; min-height: 45px;}
+        .btn-outline { background: transparent; color: var(--text-light); border: 1px solid #555; padding: 15px; border-radius: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: 0.3s; width: 100%; font-family: 'Inter', sans-serif;}
+        .btn-outline:hover { background: #222; border-color: #888; }
+        
+        /* Plan Estrella */
+        .pricing-card.popular { border: 2px solid var(--neon-green); background: linear-gradient(180deg, #111 0%, rgba(57, 255, 20, 0.05) 100%); transform: scale(1.05); z-index: 10; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .pricing-card.popular:hover { transform: scale(1.08); }
+        .popular-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--neon-green); color: #000; padding: 5px 15px; font-family: 'Rajdhani', sans-serif; font-weight: 700; border-radius: 20px; font-size: 14px; letter-spacing: 1px; }
+        .pricing-card.popular .btn-outline { background: var(--neon-green); color: #000; border: none; }
+        .pricing-card.popular .btn-outline:hover { background: #25a80e; }
+
+        /* MODAL DINÁMICO DE PAGO */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.9); backdrop-filter: blur(10px); z-index: 2000; display: none; justify-content: center; align-items: center; padding: 20px; opacity: 0; transition: opacity 0.3s;}
+        .modal-content { background: var(--bg-card); width: 100%; max-width: 600px; padding: 40px; border-radius: 20px; border: 1px solid #333; position: relative; max-height: 90vh; overflow-y: auto;}
+        .close-modal { position: absolute; top: 20px; right: 20px; background: transparent; border: none; color: var(--text-gray); font-size: 24px; cursor: pointer; transition: 0.3s;}
+        .close-modal:hover { color: var(--neon-green); }
+        .modal-content h3 { font-size: 32px; color: var(--neon-green); margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 15px;}
+        .modal-content .price-tag { font-family: 'Rajdhani', sans-serif; font-size: 40px; font-weight: 700; margin-bottom: 20px;}
+        .modal-content ul { list-style: none; margin-bottom: 30px; }
+        .modal-content ul li { font-size: 15px; margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px; color: #ddd;}
+        .modal-content ul li i { color: var(--neon-green); margin-top: 4px; }
+        .payment-box { background: #0a0a0a; border: 1px solid #222; border-radius: 12px; padding: 20px; margin-bottom: 30px; }
+        .payment-box h4 { font-size: 16px; margin-bottom: 15px; color: #AAA; }
+        .pay-method { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; font-size: 14px; }
+        .pay-method img, .pay-method i { width: 30px; text-align: center; font-size: 24px; color: var(--neon-green); }
+        .btn-whatsapp-modal { display: block; width: 100%; background: #25D366; color: #000; text-align: center; padding: 18px; border-radius: 8px; font-weight: 700; font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .btn-whatsapp-modal:hover { background: #1ebc59; transform: translateY(-2px); }
 
         /* GALERÍA DE CERTIFICADOS */
         .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
@@ -135,13 +136,11 @@
             .grid-2 .photo-frame { order: -1; margin-bottom: 15px; } 
             .grid-2 .text-box { order: 1; } 
 
+            .pricing-card.popular { transform: scale(1); border-width: 1px; }
+            .pricing-card.popular:hover { transform: scale(1.02); }
+
             .hero-text h1 { font-size: 40px; margin-bottom: 15px; }
-            .hero-text p { font-size: 16px; margin: 0 auto 30px auto; }
             .btn-neon { width: 100%; padding: 20px; font-size: 16px; margin-bottom: 40px; display: block; }
-            
-            .text-box { text-align: center !important; }
-            .text-box h2 { font-size: 32px !important; }
-            .text-box ul { text-align: left; display: inline-block; }
             .photo-frame img { max-height: 400px; }
         }
     </style>
@@ -151,22 +150,18 @@
     <header>
         <div class="container nav-content">
             <div class="brand-group">
-                <a href="#">
-                    <img src="logo.png" onerror="this.src='logo.jpg'" alt="RG Logo" class="logo-img">
-                </a>
+                <a href="#"><img src="logo.png" onerror="this.src='logo.jpg'" alt="RG Logo" class="logo-img"></a>
                 <div class="brand-text">RG<span>coach</span></div>
-                
                 <div class="header-socials">
                     <a href="https://www.instagram.com/rodolfoissa_coach?igsh=bjZ4Mm1rZWUxMDd4" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.tiktok.com/@rg.trainer?_r=1&_t=ZS-96lgbfyosC5" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
                     <a href="https://youtube.com/@RG.BienestaryFitness" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
                     <a href="https://www.facebook.com/profile.php?id=61590348699813" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
-            
             <nav class="nav-links">
                 <a href="#metodo" class="link-text">La Solución</a>
+                <a href="#planes" class="link-text">Planes</a>
                 <a href="#coach" class="link-text">Tu Coach</a>
                 <a href="#certificaciones" class="link-text">Respaldo</a>
                 <a href="#academia" class="link-text" style="color: var(--neon-green);">Academia ISSA</a>
@@ -177,26 +172,54 @@
     <section class="hero container">
         <div class="hero-text">
             <h1>Entrenamiento Inteligente para <span>Mentes Ocupadas</span></h1>
-            <p>Logra tu mejor versión con un plan que se adapta a tu ritmo de vida, diseñado para maximizar energía y reducir el estrés.</p>
-            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20iniciar%20mi%20camino%20al%20bienestar" target="_blank" class="btn-neon">AGENDA TU CAMINO AL BIENESTAR</a>
+            <p>Logra tu mejor versión con un plan que se adapta a tu ritmo de vida, diseñado para maximizar energía y reducir el estrés en casa o en el gym.</p>
+            <a href="#planes" class="btn-neon">VER PLANES DE INTERVENCIÓN</a>
         </div>
-        <div class="photo-frame">
-            <img src="foto1.jpg.jpeg" onerror="this.src='foto1.jpg'; this.onerror=function(){this.src='foto1.jpeg'};" alt="Coach Rodolfo Evaluando">
-        </div>
+        <div class="photo-frame"><img src="foto1.jpg.jpeg" onerror="this.src='foto1.jpg'; this.onerror=function(){this.src='foto1.jpeg'};" alt="Coach Rodolfo Evaluando"></div>
     </section>
 
     <section id="metodo" class="container grid-2">
-        <div class="photo-frame">
-            <img src="foto2.jpg.jpeg" onerror="this.src='foto2.jpg'; this.onerror=function(){this.src='foto2.jpeg'};" alt="Entrenamiento sin estrés">
-        </div>
+        <div class="photo-frame"><img src="foto2.jpg.jpeg" onerror="this.src='foto2.jpg'; this.onerror=function(){this.src='foto2.jpeg'};" alt="Entrenamiento sin estrés"></div>
         <div class="text-box" style="text-align: left;">
             <h2 style="font-size: 42px; line-height: 1.1;">¿El estrés diario y la falta de tiempo te <span style="color:var(--neon-green);">frenan</span>?</h2>
-            <p style="color: var(--text-gray); font-size: 16px;">
-                La sobrecarga laboral y los altos niveles de cortisol agotan tu energía. Intentar seguir rutinas genéricas o extremadamente exigentes cuando estás mentalmente agotado solo genera frustración y riesgo de lesiones.
-            </p>
-            <p style="color: var(--text-gray); font-size: 16px;">
-                No necesitas sumar más estrés a tu día, <strong>necesitas una solución eficiente</strong>. A través de una Entrevista Motivacional privada, evaluamos tu estado actual. Luego, diseño un plan estructurado y seguro que se integra a tu vida, permitiéndote liberar tensión y ver resultados reales.
-            </p>
+            <p style="color: var(--text-gray); font-size: 16px; margin-bottom: 15px;">La sobrecarga laboral y los altos niveles de cortisol agotan tu energía. Seguir rutinas genéricas cuando estás mentalmente agotado solo genera frustración y riesgo de lesiones.</p>
+            <p style="color: var(--text-gray); font-size: 16px;">No necesitas sumar más estrés a tu día, <strong>necesitas una solución eficiente</strong>. Evaluamos tu estado actual y diseño un plan seguro que se integra a tu vida, permitiéndote liberar tensión y ver resultados reales.</p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN FINANCIERA -->
+    <section id="planes" class="pricing-section">
+        <div class="container">
+            <h2 style="font-size: 42px; margin-bottom: 15px;">Planes de Intervención</h2>
+            <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto; font-size: 16px;">Selecciona el nivel de acompañamiento que necesitas. Todos los planes incluyen Entrevista Motivacional privada.</p>
+            
+            <div class="pricing-grid">
+                <!-- Plan 1 -->
+                <div class="pricing-card">
+                    <h3>Plan Forja</h3>
+                    <p class="desc">Para personas que dominan su alimentación pero necesitan guía experta y técnica.</p>
+                    <div class="price">$45 <span>/ mes</span></div>
+                    <button class="btn-outline" onclick="abrirPlan('forja')">Ver Detalles y Pagar</button>
+                </div>
+                
+                <!-- Plan 2 (Estrella) -->
+                <div class="pricing-card popular">
+                    <!-- CAMBIO REALIZADO AQUÍ -->
+                    <div class="popular-badge">EL MÁS SOLICITADO</div>
+                    <h3>Plan Integral</h3>
+                    <p class="desc">La sincronización perfecta. Entrenamiento biomecánico + Estructura Nutricional.</p>
+                    <div class="price">$90 <span>/ mes</span></div>
+                    <button class="btn-outline" onclick="abrirPlan('integral')">Ver Detalles y Pagar</button>
+                </div>
+
+                <!-- Plan 3 -->
+                <div class="pricing-card">
+                    <h3>Plan Renace</h3>
+                    <p class="desc">Servicio Élite 360º. Físico, Nutrición, Bienestar mental y comunicación prioritaria.</p>
+                    <div class="price">$150 <span>/ mes</span></div>
+                    <button class="btn-outline" onclick="abrirPlan('renace')">Ver Detalles y Pagar</button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -205,111 +228,42 @@
             <h2 style="font-size: 38px;">Lic. Rodolfo González</h2>
             <h3 style="color: var(--text-gray); margin-top: -15px; font-size: 15px; letter-spacing: 2px;">TU GUÍA HACIA UN BIENESTAR INTEGRAL</h3>
             <ul style="color: var(--text-gray); padding-left: 20px; font-size: 16px; margin-top: 30px; line-height: 2;">
-                <li><strong>Licenciatura en Educación:</strong> Te enseño a entrenar desde la empatía. Entenderás el <em>porqué</em> de cada paso sin tecnicismos complicados.</li>
-                <li><strong>Con más de 18 años de experiencia:</strong> Ayudando a profesionales ocupados a transformar su físico, recuperar su vitalidad y aliviar dolores.</li>
-                <li><strong>Ciencia a tu favor:</strong> Aplico la biomecánica en el diseño de tu plan de fondo, para que tú solo te enfoques en disfrutar un entrenamiento seguro.</li>
+                <li><strong>Licenciatura en Educación:</strong> Te enseño a entrenar desde la empatía. Entenderás el <em>porqué</em> de cada paso.</li>
+                <li><strong>Con más de 18 años de experiencia:</strong> Ayudando a profesionales ocupados a transformar su físico y aliviar dolores.</li>
+                <li><strong>Ciencia a tu favor:</strong> Aplico la biomecánica para que tú solo te enfoques en disfrutar un entrenamiento seguro.</li>
             </ul>
         </div>
-        <div class="photo-frame">
-            <img src="foto4.jpeg" onerror="this.src='foto4.jpg'; this.onerror=function(){this.src='foto4.jpg.jpeg'};" alt="Coach Rodolfo Liderazgo">
-        </div>
+        <div class="photo-frame"><img src="foto4.jpeg" onerror="this.src='foto4.jpg'; this.onerror=function(){this.src='foto4.jpg.jpeg'};" alt="Coach Rodolfo Liderazgo"></div>
     </section>
 
     <section id="certificaciones" class="container">
         <h2 style="text-align: center; font-size: 38px; margin-bottom: 20px;">Tu Tranquilidad es mi Prioridad</h2>
-        <p style="text-align: center; color: var(--text-gray); font-size: 16px; max-width: 700px; margin: 0 auto;">Mi metodología está respaldada por una sólida formación académica y certificaciones internacionales para garantizar tu seguridad en cada movimiento.</p>
+        <p style="text-align: center; color: var(--text-gray); font-size: 16px; max-width: 700px; margin: 0 auto;">Mi metodología está respaldada por una sólida formación académica y certificaciones internacionales.</p>
         
         <div class="cert-grid">
             <div class="cert-card" style="border-color: var(--neon-green); box-shadow: 0 0 15px rgba(57,255,20,0.1);">
-                <div class="cert-img-container">
-                    <img src="cert_uni.jpeg" onerror="this.src='cert_uni.jpg'; this.onerror=function(){this.src='cert_uni.png'};" alt="Título Universitario Licenciatura en Educación">
-                </div>
-                <div class="cert-info">
-                    <h4>Licenciatura en Educación</h4>
-                    <p>Formación universitaria con base pedagógica y didáctica. El fundamento absoluto para enseñar, instruir y transformar con paciencia.</p>
-                </div>
+                <div class="cert-img-container"><img src="cert_uni.jpeg" onerror="this.src='cert_uni.jpg'; this.onerror=function(){this.src='cert_uni.png'};" alt="Licenciatura"></div>
+                <div class="cert-info"><h4>Licenciatura en Educación</h4><p>Formación universitaria con base pedagógica. El fundamento para enseñar y transformar.</p></div>
             </div>
-
-            <!-- NUEVO CERTIFICADO: ISSA GLOBAL SUMMIT -->
             <div class="cert-card">
-                <div class="cert-img-container">
-                    <img src="cert7.jpg" onerror="this.src='cert7.jpeg'; this.onerror=function(){this.src='cert7.png'};" alt="ISSA Global Summit 2026">
-                </div>
-                <div class="cert-info">
-                    <h4>ISSA Global Summit 2026</h4>
-                    <p>Actualización profesional en la cumbre mundial de ISSA, incorporando las últimas innovaciones científicas y metodologías del fitness global.</p>
-                </div>
+                <div class="cert-img-container"><img src="cert7.jpg" onerror="this.src='cert7.jpeg'; this.onerror=function(){this.src='cert7.png'};" alt="ISSA Global Summit"></div>
+                <div class="cert-info"><h4>ISSA Global Summit 2026</h4><p>Actualización profesional en la cumbre mundial de ISSA, incorporando las últimas metodologías del fitness global.</p></div>
             </div>
-
-            <!-- NUEVO CERTIFICADO: RCP Y DEA -->
             <div class="cert-card">
-                <div class="cert-img-container">
-                    <img src="cert8.jpg" onerror="this.src='cert8.jpeg'; this.onerror=function(){this.src='cert8.png'};" alt="ISSA CPR and AED">
-                </div>
-                <div class="cert-info">
-                    <h4>Primeros Auxilios (RCP y DEA)</h4>
-                    <p>Certificación internacional en soporte vital básico. Garantía absoluta de seguridad e integridad física durante cada intervención.</p>
-                </div>
+                <div class="cert-img-container"><img src="cert8.jpg" onerror="this.src='cert8.jpeg'; this.onerror=function(){this.src='cert8.png'};" alt="ISSA CPR"></div>
+                <div class="cert-info"><h4>Primeros Auxilios (RCP y DEA)</h4><p>Certificación internacional en soporte vital básico. Garantía absoluta de seguridad física.</p></div>
             </div>
-
             <div class="cert-card">
-                <div class="cert-img-container">
-                    <img src="cert1.jpg" onerror="this.src='cert1.jpeg'; this.onerror=function(){this.src='cert1.png'};" alt="ISSA Personal Trainer">
-                </div>
-                <div class="cert-info">
-                    <h4>ISSA Certified Personal Trainer</h4>
-                    <p>Entrenamientos basados en metodologías globales actualizadas para resultados reales y sostenibles.</p>
-                </div>
+                <div class="cert-img-container"><img src="cert1.jpg" onerror="this.src='cert1.jpeg'; this.onerror=function(){this.src='cert1.png'};" alt="ISSA PT"></div>
+                <div class="cert-info"><h4>ISSA Certified Personal Trainer</h4><p>Entrenamientos basados en metodologías globales para resultados sostenibles.</p></div>
             </div>
-            
             <div class="cert-card">
-                <div class="cert-img-container">
-                    <img src="cert2.jpg" onerror="this.src='cert2.jpeg'; this.onerror=function(){this.src='cert2.png'};" alt="ISSA Nutrition Coach">
-                </div>
-                <div class="cert-info">
-                    <h4>ISSA Nutrition Coach</h4>
-                    <p>Orientación nutricional práctica y flexible. Nutrimos tu cuerpo sin dietas restrictivas que generen ansiedad.</p>
-                </div>
+                <div class="cert-img-container"><img src="cert2.jpg" onerror="this.src='cert2.jpeg'; this.onerror=function(){this.src='cert2.png'};" alt="ISSA Nutrition"></div>
+                <div class="cert-info"><h4>ISSA Nutrition Coach</h4><p>Orientación nutricional práctica y flexible. Sin dietas restrictivas.</p></div>
             </div>
-
             <div class="cert-card">
-                <div class="cert-img-container">
-                    <img src="cert3.png" onerror="this.src='cert3.jpg'; this.onerror=function(){this.src='cert3.jpeg'};" alt="CYBEX Biomechanics">
-                </div>
-                <div class="cert-info">
-                    <h4>Especialista Biomecánico (CYBEX)</h4>
-                    <p>Análisis de la mecánica humana para asegurar que cada ejercicio alivie tensiones y proteja tus articulaciones.</p>
-                </div>
-            </div>
-
-            <div class="cert-card">
-                <div class="cert-img-container">
-                    <img src="cert4.jpg" onerror="this.src='cert4.jpeg'; this.onerror=function(){this.src='cert4.png'};" alt="IUNAV IA">
-                </div>
-                <div class="cert-info">
-                    <h4>Innovación Digital con IA (IUNAV)</h4>
-                    <p>Uso de Inteligencia Artificial como asistente privado para optimizar y entregar tus rutinas en tiempo récord.</p>
-                </div>
-            </div>
-            
-            <div class="cert-card">
-                <div class="cert-img-container">
-                    <img src="cert5.png" onerror="this.src='cert5.jpg'; this.onerror=function(){this.src='cert5.jpeg'};" alt="Patologías LUZ">
-                </div>
-                <div class="cert-info">
-                    <h4>Prescripción para Patologías (LUZ)</h4>
-                    <p>Diseño de planes seguros para personas con condiciones médicas específicas, garantizando salud integral.</p>
-                </div>
-            </div>
-
-            <div class="cert-card">
-                <div class="cert-img-container">
-                    <img src="cert6.png" onerror="this.src='cert6.jpg'; this.onerror=function(){this.src='cert6.jpeg'};" alt="Coach de Salud LIGHT">
-                </div>
-                <div class="cert-info">
-                    <h4>Coach de Salud (Fundación LIGHT)</h4>
-                    <p>Formación acreditada para promover hábitos de vida saludables y prevención de enfermedades desde un enfoque holístico.</p>
-                </div>
+                <div class="cert-img-container"><img src="cert3.png" onerror="this.src='cert3.jpg'; this.onerror=function(){this.src='cert3.jpeg'};" alt="CYBEX"></div>
+                <div class="cert-info"><h4>Especialista Biomecánico (CYBEX)</h4><p>Análisis para asegurar que cada ejercicio alivie tensiones y proteja articulaciones.</p></div>
             </div>
         </div>
     </section>
@@ -319,68 +273,111 @@
         <div class="container grid-2" style="padding-top: 40px; padding-bottom: 40px;">
             <div class="text-box" style="text-align: left;">
                 <h2 style="font-size: 42px; line-height: 1.1;">Fórmate con los Mejores: <br><span style="color:var(--neon-green);">Academia ISSA</span></h2>
-                <p style="color: var(--text-gray); font-size: 16px; margin-top: 20px;">
-                    Si te apasiona el fitness y quieres convertirlo en una carrera internacional rentable, necesitas el respaldo de los líderes del mercado. Como entrenador certificado oficial, te invito a dar el paso con la <strong>International Sports Sciences Association (ISSA)</strong>.
-                </p>
-                <p style="color: var(--text-gray); font-size: 16px; margin-bottom: 30px;">
-                    Obtén las certificaciones que yo obtuve estudiando 100% online y en español. Construye tu propio negocio a nivel global.
-                </p>
+                <p style="color: var(--text-gray); font-size: 16px; margin-top: 20px;">Si te apasiona el fitness y quieres convertirlo en una carrera internacional rentable, necesitas el respaldo de los líderes del mercado. Te invito a dar el paso con la <strong>International Sports Sciences Association (ISSA)</strong>.</p>
                 <a href="https://issa.sjv.io/9VyzPy" target="_blank" class="btn-neon" style="margin-top: 15px;">EXPLORA LOS CURSOS EN ESPAÑOL</a>
             </div>
-            <div class="photo-frame">
-                <img src="foto_issa.jpg.jpeg" onerror="this.src='foto_issa.jpg'; this.onerror=function(){this.src='foto_issa.jpeg'};" alt="Coach Rodolfo Certificados ISSA" style="border-color: var(--neon-green); box-shadow: 0 0 25px rgba(57, 255, 20, 0.2);">
-            </div>
+            <div class="photo-frame"><img src="foto_issa.jpg.jpeg" onerror="this.src='foto_issa.jpg'; this.onerror=function(){this.src='foto_issa.jpeg'};" alt="Coach Rodolfo Certificados ISSA" style="border-color: var(--neon-green); box-shadow: 0 0 25px rgba(57, 255, 20, 0.2);"></div>
         </div>
     </section>
 
-    <section id="videos" class="video-section">
-        <div class="container">
-            <h2 style="font-size: 38px;">Aprende a Moverte Bien</h2>
-            <p style="color: var(--text-gray); font-size: 16px;">Descubre cómo una técnica correcta puede liberar el estrés acumulado de tu día a día.</p>
-            
-            <div class="video-grid">
-                <div class="native-video-player">
-                    <video controls controlsList="nodownload" playsinline>
-                        <source src="video.mp4.mp4" onerror="this.src='video.mp4'" type="video/mp4">
-                    </video>
-                </div>
-                <div class="native-video-player">
-                    <video controls controlsList="nodownload" playsinline>
-                        <source src="video2.mp4" onerror="this.src='video2.mp4.mp4'" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section style="text-align: center; border-bottom: none; padding-bottom: 60px; padding-top: 60px;">
-        <div class="container">
-            <h2 style="font-size: 40px; margin-bottom: 10px;">Da el Primer Paso sin Compromisos</h2>
-            <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto 30px auto; font-size: 16px;">
-                Hablemos de tus objetivos, tu nivel de estrés actual y cómo podemos adaptar un plan a tu vida. Haz clic abajo para iniciar una charla tranquila, directa y confidencial.
-            </p>
-            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20iniciar%20mi%20camino%20al%20bienestar" target="_blank" class="btn-neon">INICIAR MI CAMINO AL BIENESTAR</a>
-        </div>
-    </section>
-
-    <footer style="background: var(--bg-panel); padding: 50px 20px 30px 20px; text-align: center; border-top: 1px solid #222;">
+    <footer style="background: var(--bg-card); padding: 50px 20px 30px 20px; text-align: center; border-top: 1px solid #222;">
         <div style="display: flex; justify-content: center; margin-bottom: 20px;">
             <img src="logo.png" onerror="this.src='logo.jpg'" alt="RG Logo" style="height: 60px; border-radius: 12px; border: 1px solid #333;">
         </div>
         <p style="color: var(--text-gray); font-size: 16px; letter-spacing: 1px;">Conectemos a través de mis plataformas:</p>
-        
         <div class="footer-social">
-            <a href="https://www.instagram.com/rodolfoissa_coach?igsh=bjZ4Mm1rZWUxMDd4" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@rg.trainer?_r=1&_t=ZS-96lgbfyosC5" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-            <a href="https://youtube.com/@RG.BienestaryFitness" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=61590348699813" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20iniciar%20mi%20camino%20al%20bienestar" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/rodolfoissa_coach?igsh=bjZ4Mm1rZWUxMDd4" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@rg.trainer?_r=1&_t=ZS-96lgbfyosC5" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://youtube.com/@RG.BienestaryFitness" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61590348699813" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
         </div>
-        
-        <p style="color: var(--text-gray); font-size: 13px; margin-top: 40px;">
-            &copy; 2024 Rodolfo González - Especialista en Bienestar e ISSA Certified Trainer.<br>Todos los derechos reservados.
-        </p>
+        <p style="color: var(--text-gray); font-size: 13px; margin-top: 40px;">&copy; 2026 Rodolfo González - Especialista en Bienestar. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- MODAL DINÁMICO DE PLANES (EL CEREBRO FINANCIERO) -->
+    <div id="plan-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal" onclick="cerrarModal()"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="modal-title">Plan</h3>
+            <div class="price-tag" id="modal-price">$0</div>
+            
+            <ul id="modal-features">
+                <!-- Beneficios inyectados por JS -->
+            </ul>
+
+            <div class="payment-box">
+                <h4>Métodos de Pago Internacionales:</h4>
+                <div class="pay-method"><i class="fa-solid fa-building-columns"></i> <span><strong>Facebank / Tarjeta</strong> (Solicita link al Coach)</span></div>
+                <div class="pay-method"><i class="fa-solid fa-p"></i> <span><strong>Payoneer</strong> (Transferencia global)</span></div>
+                <div class="pay-method"><img src="https://cryptologos.cc/logos/bnb-bnb-logo.png?v=029" style="width:20px;"> <span><strong>Binance Pay</strong> (USDT sin comisiones)</span></div>
+                <div class="pay-method"><i class="fa-solid fa-wallet" style="color:#aa00ff;"></i> <span style="color:#DDD;"><strong>Zinli</strong> (Latinoamérica)</span></div>
+            </div>
+
+            <a href="#" id="modal-btn-whatsapp" target="_blank" class="btn-whatsapp-modal">
+                <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i> ENVIAR MENSAJE AL COACH
+            </a>
+            <p style="text-align: center; color: var(--text-gray); font-size: 12px; margin-top: 15px;">Habla conmigo directamente. Acordaremos el pago y agendaremos tu Entrevista Motivacional.</p>
+        </div>
+    </div>
+
+    <script>
+        // LÓGICA DEL MOTOR DE PRECIOS
+        const planesData = {
+            'forja': {
+                title: 'Plan Forja', price: '$45 / mes',
+                features: [
+                    '<i>✓</i> Diseño de Programa Personalizado para casa o gym.',
+                    '<i>✓</i> Enfoque Biomecánico: máxima seguridad articular.',
+                    '<i>✓</i> Ajustes mensuales según tu evolución.',
+                    '<i>✓</i> Revisión de técnica por video (Soporte Básico).'
+                ],
+                wpMsg: 'Hola Coach Rodolfo, leí los detalles en tu web y quiero iniciar mi transformación con el Plan Forja ($45). ¿Cómo procedemos con el pago?'
+            },
+            'integral': {
+                title: 'Plan Integral', price: '$90 / mes',
+                features: [
+                    '<i>✓</i> <strong>Todo lo incluido en el Plan Forja.</strong>',
+                    '<i>✓</i> Planificación Nutricional Estratégica (Macros).',
+                    '<i>✓</i> Sin dietas extremas: Educación alimentaria.',
+                    '<i>✓</i> Evaluación y ajustes continuos para no estancarte.'
+                ],
+                wpMsg: 'Hola Coach Rodolfo, leí los detalles en tu web y quiero iniciar mi transformación con el Plan Integral ($90). ¿Cómo procedemos con el pago?'
+            },
+            'renace': {
+                title: 'Plan Renace', price: '$150 / mes',
+                features: [
+                    '<i>✓</i> <strong>Todo lo incluido en el Plan Integral.</strong>',
+                    '<i>✓</i> Programa de Bienestar Mental y reducción de cortisol.',
+                    '<i>✓</i> Optimización del sueño y regeneración.',
+                    '<i>✓</i> Acompañamiento VIP prioritario y en tiempo real.'
+                ],
+                wpMsg: 'Hola Coach Rodolfo, leí los detalles en tu web y quiero iniciar mi transformación 360º con el Plan Renace ($150). ¿Cómo procedemos con el pago?'
+            }
+        };
+
+        function abrirPlan(planKey) {
+            const data = planesData[planKey];
+            document.getElementById('modal-title').innerText = data.title;
+            document.getElementById('modal-price').innerHTML = data.price;
+            
+            const ul = document.getElementById('modal-features');
+            ul.innerHTML = '';
+            data.features.forEach(f => { ul.innerHTML += `<li>${f}</li>`; });
+
+            const encodedMsg = encodeURIComponent(data.wpMsg);
+            document.getElementById('modal-btn-whatsapp').href = `https://wa.me/584141109723?text=${encodedMsg}`;
+
+            const modal = document.getElementById('plan-modal');
+            modal.style.display = 'flex';
+            // Pequeño delay para la animación de opacidad
+            setTimeout(() => { modal.style.opacity = '1'; }, 10);
+        }
+
+        function cerrarModal() {
+            const modal = document.getElementById('plan-modal');
+            modal.style.opacity = '0';
+            setTimeout(() => { modal.style.display = 'none'; }, 300);
+        }
+    </script>
 </body>
 </html>
