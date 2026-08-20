@@ -67,23 +67,19 @@
 
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         
-        /* SECCIÓN FINANCIERA (PLANES) REDISEÑADA A PETICIÓN */
+        /* SECCIÓN FINANCIERA (PLANES) */
         .pricing-section { background: #050505; text-align: center; }
         .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; align-items: center;}
-        
-        /* Modificación: Todos los bordes son Neón y el botón es sólido */
         .pricing-card { background: var(--bg-card); border: 2px solid var(--neon-green); border-radius: 16px; padding: 40px 30px; transition: 0.3s; position: relative; display: flex; flex-direction: column; justify-content: space-between; height: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.5);}
         .pricing-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(57, 255, 20, 0.15); }
         .pricing-card h3 { font-size: 28px; margin-bottom: 10px; color: #FFF; }
         .pricing-card .price { font-family: 'Rajdhani', sans-serif; font-size: 48px; font-weight: 700; color: var(--neon-green); margin-bottom: 20px; line-height: 1;}
         .pricing-card .price span { font-size: 16px; color: var(--text-gray); font-weight: 400; font-family: 'Inter', sans-serif; letter-spacing: 0;}
         .pricing-card p.desc { font-size: 14px; color: var(--text-gray); margin-bottom: 30px; min-height: 45px;}
-        
-        /* Botón unificado sólido para todos los planes */
         .btn-solid-plan { background: var(--neon-green); color: #000; padding: 15px; border-radius: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: 0.3s; width: 100%; font-family: 'Inter', sans-serif; border: none; }
         .btn-solid-plan:hover { background: #25a80e; transform: translateY(-2px); }
         
-        /* Plan Estrella (Mantiene el tamaño ligeramente superior para destacar) */
+        /* Plan Estrella */
         .pricing-card.popular { background: linear-gradient(180deg, #111 0%, rgba(57, 255, 20, 0.05) 100%); transform: scale(1.05); z-index: 10; }
         .pricing-card.popular:hover { transform: scale(1.08); }
         .popular-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--neon-green); color: #000; padding: 5px 15px; font-family: 'Rajdhani', sans-serif; font-weight: 700; border-radius: 20px; font-size: 14px; letter-spacing: 1px; }
@@ -141,8 +137,9 @@
             .hero .photo-frame { order: -1; margin-bottom: 15px; } 
             .hero .hero-text { order: 1; } 
             
-            .grid-2 { display: flex; flex-direction: column; gap: 40px; text-align: center; }
-            .grid-2 .photo-frame { order: -1; margin-bottom: 15px; } 
+            /* Separación forzada en móvil para Tu Coach */
+            .grid-2 { display: flex; flex-direction: column; gap: 50px; text-align: center; }
+            .grid-2 .photo-frame { order: -1; margin-bottom: 30px; } 
             .grid-2 .text-box { order: 1; } 
 
             .pricing-card.popular { transform: scale(1); border-width: 2px; }
@@ -208,7 +205,7 @@
                     <h3>Plan Forja</h3>
                     <p class="desc">Para personas que dominan su alimentación pero necesitan guía experta y técnica.</p>
                     <div class="price">$45 <span>/ mes</span></div>
-                    <button class="btn-solid-plan" onclick="abrirPlan('forja')">Ver Detalles y Pagar</button>
+                    <button class="btn-solid-plan" onclick="abrirPlan('forja')">VER DETALLES</button>
                 </div>
                 
                 <!-- Plan 2 (Estrella) -->
@@ -217,7 +214,7 @@
                     <h3>Plan Integral</h3>
                     <p class="desc">La sincronización perfecta. Entrenamiento biomecánico + Estructura Nutricional.</p>
                     <div class="price">$90 <span>/ mes</span></div>
-                    <button class="btn-solid-plan" onclick="abrirPlan('integral')">Ver Detalles y Pagar</button>
+                    <button class="btn-solid-plan" onclick="abrirPlan('integral')">VER DETALLES</button>
                 </div>
 
                 <!-- Plan 3 -->
@@ -225,7 +222,7 @@
                     <h3>Plan Renace</h3>
                     <p class="desc">Servicio Élite 360º. Físico, Nutrición, Bienestar mental y comunicación prioritaria.</p>
                     <div class="price">$150 <span>/ mes</span></div>
-                    <button class="btn-solid-plan" onclick="abrirPlan('renace')">Ver Detalles y Pagar</button>
+                    <button class="btn-solid-plan" onclick="abrirPlan('renace')">VER DETALLES</button>
                 </div>
             </div>
         </div>
@@ -241,11 +238,14 @@
                 <li><strong>Ciencia a tu favor:</strong> Aplico la biomecánica para que tú solo te enfoques en disfrutar un entrenamiento seguro.</li>
             </ul>
         </div>
-        <div class="photo-frame"><img src="foto4.jpeg" onerror="this.src='foto4.jpg'; this.onerror=function(){this.src='foto4.jpg.jpeg'};" alt="Coach Rodolfo Liderazgo"></div>
+        <div class="photo-frame" style="margin-bottom: 30px;">
+            <img src="foto4.jpeg" onerror="this.src='foto4.jpg'; this.onerror=function(){this.src='foto4.jpg.jpeg'};" alt="Coach Rodolfo Liderazgo">
+        </div>
     </section>
 
+    <!-- CERTIFICACIONES (Con margen superior ajustado) -->
     <section id="certificaciones" class="container">
-        <h2 style="text-align: center; font-size: 38px; margin-bottom: 20px;">Tu Tranquilidad es mi Prioridad</h2>
+        <h2 style="text-align: center; font-size: 38px; margin-bottom: 20px; margin-top: 30px;">Tu Tranquilidad es mi Prioridad</h2>
         <p style="text-align: center; color: var(--text-gray); font-size: 16px; max-width: 700px; margin: 0 auto;">Mi metodología está respaldada por una sólida formación académica y certificaciones internacionales.</p>
         
         <div class="cert-grid">
@@ -288,7 +288,6 @@
         </div>
     </section>
 
-    <!-- ¡LA SECCIÓN DE VIDEOS RESTAURADA! -->
     <section id="videos" class="video-section">
         <div class="container">
             <h2 style="font-size: 38px;">Aprende a Moverte Bien</h2>
@@ -306,6 +305,16 @@
                     </video>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section style="text-align: center; border-bottom: none; padding-bottom: 60px; padding-top: 60px;">
+        <div class="container">
+            <h2 style="font-size: 40px; margin-bottom: 10px;">Da el Primer Paso sin Compromisos</h2>
+            <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto 30px auto; font-size: 16px;">
+                Hablemos de tus objetivos, tu nivel de estrés actual y cómo podemos adaptar un plan a tu vida. Haz clic abajo para iniciar una charla tranquila, directa y confidencial.
+            </p>
+            <a href="https://wa.me/584141109723?text=Hola%20Coach%20Rodolfo%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20iniciar%20mi%20camino%20al%20bienestar" target="_blank" class="btn-neon">INICIAR MI CAMINO AL BIENESTAR</a>
         </div>
     </section>
 
@@ -398,6 +407,7 @@
 
             const modal = document.getElementById('plan-modal');
             modal.style.display = 'flex';
+            // Pequeño delay para la animación de opacidad
             setTimeout(() => { modal.style.opacity = '1'; }, 10);
         }
 
