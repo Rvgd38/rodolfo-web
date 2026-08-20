@@ -67,24 +67,26 @@
 
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         
-        /* SECCIÓN FINANCIERA (PLANES) */
+        /* SECCIÓN FINANCIERA (PLANES) REDISEÑADA A PETICIÓN */
         .pricing-section { background: #050505; text-align: center; }
         .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; align-items: center;}
-        .pricing-card { background: var(--bg-card); border: 1px solid #333; border-radius: 16px; padding: 40px 30px; transition: 0.3s; position: relative; display: flex; flex-direction: column; justify-content: space-between; height: 100%;}
-        .pricing-card:hover { transform: translateY(-10px); border-color: #555; }
+        
+        /* Modificación: Todos los bordes son Neón y el botón es sólido */
+        .pricing-card { background: var(--bg-card); border: 2px solid var(--neon-green); border-radius: 16px; padding: 40px 30px; transition: 0.3s; position: relative; display: flex; flex-direction: column; justify-content: space-between; height: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.5);}
+        .pricing-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(57, 255, 20, 0.15); }
         .pricing-card h3 { font-size: 28px; margin-bottom: 10px; color: #FFF; }
         .pricing-card .price { font-family: 'Rajdhani', sans-serif; font-size: 48px; font-weight: 700; color: var(--neon-green); margin-bottom: 20px; line-height: 1;}
         .pricing-card .price span { font-size: 16px; color: var(--text-gray); font-weight: 400; font-family: 'Inter', sans-serif; letter-spacing: 0;}
         .pricing-card p.desc { font-size: 14px; color: var(--text-gray); margin-bottom: 30px; min-height: 45px;}
-        .btn-outline { background: transparent; color: var(--text-light); border: 1px solid #555; padding: 15px; border-radius: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: 0.3s; width: 100%; font-family: 'Inter', sans-serif;}
-        .btn-outline:hover { background: #222; border-color: #888; }
         
-        /* Plan Estrella */
-        .pricing-card.popular { border: 2px solid var(--neon-green); background: linear-gradient(180deg, #111 0%, rgba(57, 255, 20, 0.05) 100%); transform: scale(1.05); z-index: 10; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        /* Botón unificado sólido para todos los planes */
+        .btn-solid-plan { background: var(--neon-green); color: #000; padding: 15px; border-radius: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: 0.3s; width: 100%; font-family: 'Inter', sans-serif; border: none; }
+        .btn-solid-plan:hover { background: #25a80e; transform: translateY(-2px); }
+        
+        /* Plan Estrella (Mantiene el tamaño ligeramente superior para destacar) */
+        .pricing-card.popular { background: linear-gradient(180deg, #111 0%, rgba(57, 255, 20, 0.05) 100%); transform: scale(1.05); z-index: 10; }
         .pricing-card.popular:hover { transform: scale(1.08); }
         .popular-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--neon-green); color: #000; padding: 5px 15px; font-family: 'Rajdhani', sans-serif; font-weight: 700; border-radius: 20px; font-size: 14px; letter-spacing: 1px; }
-        .pricing-card.popular .btn-outline { background: var(--neon-green); color: #000; border: none; }
-        .pricing-card.popular .btn-outline:hover { background: #25a80e; }
 
         /* MODAL DINÁMICO DE PAGO */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.9); backdrop-filter: blur(10px); z-index: 2000; display: none; justify-content: center; align-items: center; padding: 20px; opacity: 0; transition: opacity 0.3s;}
@@ -114,6 +116,13 @@
         .cert-info h4 { color: var(--neon-green); font-size: 20px; margin: 0 0 10px 0; font-family: 'Rajdhani', sans-serif; line-height: 1.2; }
         .cert-info p { color: var(--text-gray); font-size: 14px; margin: 0; line-height: 1.5; font-family: 'Inter', sans-serif; }
         
+        /* RESTAURACIÓN DEL MÓDULO DE VIDEOS */
+        .video-section { text-align: center; background: #080808; padding: 80px 20px; border-top: 1px solid #1a1a1a;}
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 40px; }
+        .native-video-player { width: 100%; margin: 0 auto; border-radius: 12px; overflow: hidden; border: 2px solid #222; box-shadow: 0 10px 30px rgba(0,0,0,0.9); transition: transform 0.3s, border-color 0.3s; background-color: #000; }
+        .native-video-player:hover { transform: translateY(-5px); border-color: var(--neon-green); }
+        .native-video-player video { width: 100%; display: block; max-height: 550px; object-fit: contain; }
+
         /* FOOTER SOCIAL ICONS */
         .footer-social { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 20px; }
         .footer-social a { color: var(--text-light); font-size: 32px; transition: all 0.3s; }
@@ -136,7 +145,7 @@
             .grid-2 .photo-frame { order: -1; margin-bottom: 15px; } 
             .grid-2 .text-box { order: 1; } 
 
-            .pricing-card.popular { transform: scale(1); border-width: 1px; }
+            .pricing-card.popular { transform: scale(1); border-width: 2px; }
             .pricing-card.popular:hover { transform: scale(1.02); }
 
             .hero-text h1 { font-size: 40px; margin-bottom: 15px; }
@@ -199,17 +208,16 @@
                     <h3>Plan Forja</h3>
                     <p class="desc">Para personas que dominan su alimentación pero necesitan guía experta y técnica.</p>
                     <div class="price">$45 <span>/ mes</span></div>
-                    <button class="btn-outline" onclick="abrirPlan('forja')">Ver Detalles y Pagar</button>
+                    <button class="btn-solid-plan" onclick="abrirPlan('forja')">Ver Detalles y Pagar</button>
                 </div>
                 
                 <!-- Plan 2 (Estrella) -->
                 <div class="pricing-card popular">
-                    <!-- CAMBIO REALIZADO AQUÍ -->
                     <div class="popular-badge">EL MÁS SOLICITADO</div>
                     <h3>Plan Integral</h3>
                     <p class="desc">La sincronización perfecta. Entrenamiento biomecánico + Estructura Nutricional.</p>
                     <div class="price">$90 <span>/ mes</span></div>
-                    <button class="btn-outline" onclick="abrirPlan('integral')">Ver Detalles y Pagar</button>
+                    <button class="btn-solid-plan" onclick="abrirPlan('integral')">Ver Detalles y Pagar</button>
                 </div>
 
                 <!-- Plan 3 -->
@@ -217,7 +225,7 @@
                     <h3>Plan Renace</h3>
                     <p class="desc">Servicio Élite 360º. Físico, Nutrición, Bienestar mental y comunicación prioritaria.</p>
                     <div class="price">$150 <span>/ mes</span></div>
-                    <button class="btn-outline" onclick="abrirPlan('renace')">Ver Detalles y Pagar</button>
+                    <button class="btn-solid-plan" onclick="abrirPlan('renace')">Ver Detalles y Pagar</button>
                 </div>
             </div>
         </div>
@@ -280,6 +288,27 @@
         </div>
     </section>
 
+    <!-- ¡LA SECCIÓN DE VIDEOS RESTAURADA! -->
+    <section id="videos" class="video-section">
+        <div class="container">
+            <h2 style="font-size: 38px;">Aprende a Moverte Bien</h2>
+            <p style="color: var(--text-gray); font-size: 16px;">Descubre cómo una técnica correcta puede liberar el estrés acumulado de tu día a día.</p>
+            
+            <div class="video-grid">
+                <div class="native-video-player">
+                    <video controls controlsList="nodownload" playsinline>
+                        <source src="video.mp4.mp4" onerror="this.src='video.mp4'" type="video/mp4">
+                    </video>
+                </div>
+                <div class="native-video-player">
+                    <video controls controlsList="nodownload" playsinline>
+                        <source src="video2.mp4" onerror="this.src='video2.mp4.mp4'" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer style="background: var(--bg-card); padding: 50px 20px 30px 20px; text-align: center; border-top: 1px solid #222;">
         <div style="display: flex; justify-content: center; margin-bottom: 20px;">
             <img src="logo.png" onerror="this.src='logo.jpg'" alt="RG Logo" style="height: 60px; border-radius: 12px; border: 1px solid #333;">
@@ -321,7 +350,7 @@
     </div>
 
     <script>
-        // LÓGICA DEL MOTOR DE PRECIOS
+        // LÓGICA DEL MOTOR DE PRECIOS Y ACTUALIZACIÓN DE COPYWRITING
         const planesData = {
             'forja': {
                 title: 'Plan Forja', price: '$45 / mes',
@@ -337,7 +366,7 @@
                 title: 'Plan Integral', price: '$90 / mes',
                 features: [
                     '<i>✓</i> <strong>Todo lo incluido en el Plan Forja.</strong>',
-                    '<i>✓</i> Planificación Nutricional Estratégica (Macros).',
+                    '<i>✓</i> Planificación Nutricional Estratégica (Macros y Suplementación).',
                     '<i>✓</i> Sin dietas extremas: Educación alimentaria.',
                     '<i>✓</i> Evaluación y ajustes continuos para no estancarte.'
                 ],
@@ -369,7 +398,6 @@
 
             const modal = document.getElementById('plan-modal');
             modal.style.display = 'flex';
-            // Pequeño delay para la animación de opacidad
             setTimeout(() => { modal.style.opacity = '1'; }, 10);
         }
 
